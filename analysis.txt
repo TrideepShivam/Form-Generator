@@ -1,0 +1,59 @@
+create first/default form for getting....
+
+creator name and contact
+event name
+event details
+	starting date
+	final date
+advance edit option.(provide a documentation in right side)
+submit and cancel button
+
+
+expand advance edit option after clicking on advance edit and show advance div between submit button and first form...
+and first form will be shrinked , generate a navigation button to first form , help button will be fixed at the center left of body
+nevigation to first form will shrink adavnce div and expand first form . 
+ 	after clicking advance edit, open live form instead of documantation at the right pannel. panel ratio = 40*60
+	need in advance edit/ttrubutes_
+ 	1.txtbox(no.or text and more) and label
+	2.radio
+	3.txtrea
+	4.range *2 for radius and border
+	5.dob
+	6.checkbox
+style:-
+	
+	7.font colors
+	8.theme clr (button color change with border color)
+	9.selection for textbox style
+	
+on submit all data will be transfered to the shivam through ajex in json
+a sucess mail will be sent to the user.
+on submit, a guidelines how to share user's link(for users) ,will be reponded.
+for textbox { label, restriction (only text, only numerial, text and numerial both), minimun and max character }
+
+Requirement
+	1. textbox:-
+		*ONLY TEXT, *TEXT+NUMBER, *NUMBER,
+		VALIDITION:-MIN CHARA AND MAX CHARA
+			WITH LABELBOX
+	2.email with no labelbox.
+	
+	3. Range:- label box with max and min point
+	
+	4. RADIO:- A label box with every radio button
+	4. RADIO:- first how many radio button provide to the user , label box for each radio button
+		
+	5. checkbox:- a label box with everycheck box
+	
+	6. date :- a label box 
+		validation*
+	7. textarea :- a label box with fixed dimension  
+style:- 
+	1. style of all input box(we provide option)
+	2. theme color(button + border)
+	3. we have to design:- checkbox,radio button ,input box ,range
+
+		
+
+
+
