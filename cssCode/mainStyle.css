@@ -351,6 +351,37 @@ body{
 		}
 	.circleTextboxgk:focus{border-color: #fe9d07;}
 
+.dualborderaajtak{
+      border:2px solid yellow;
+      outline:none;
+      border-width:2px 9px 2px 9px;
+      font-size:16px;
+      padding:4px;
+      border-radius:2.5px;
+    }
+    .textfiveaajtak{
+      border:3px solid rgb(74,147,95);
+      font-size:17px;
+      padding:2px 2px 2px 4px;
+      border-radius:5px;
+      outline-color:rgb(74,147,95,.4);
+      outline-width:0px;
+      outline-style:solid;
+      transition:outline-width .1s;
+    }
+    .textfiveaajtak:focus{outline-width:2px;}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
