@@ -4,3 +4,6 @@ use content delevery network url to inherit this mainStyle.css file in your html
 https://cdn.statically.io/gh/TrideepShivam/Form-Generator/main/cssCode/mainStyle.css
 
 simply add the class name with its detailed style....
+
+
+
