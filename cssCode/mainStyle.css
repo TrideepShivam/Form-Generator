@@ -2,32 +2,6 @@
 ::-webkit-scrollbar-track{background:rgba(0,0,0,.3);}
 ::-webkit-scrollbar-thumb{background:black;}
 
-body{
-	font-family: 'Open Sans', sans-serif;
-	margin:0;
-	background-image:linear-gradient(90deg,rgb(80,0,255),rgb(100,0,255));
-	overflow-x:hidden;
-}
-.commonHead{
-	color:rgb(18,250,62);
-	text-shadow:0 0 10px rgb(18,250,62);
-}
-/* #loading{
-	position:fixed;
-	width:100%;
-	height:100%;
-	background:rgba(0,0,0,.9);
-	display:flex;
-	align-items:center;
-	justify-content:center;	
-	z-index:5;
-}
-#loadingcolor{
-	width:100px;
-	height:100px;
-	border-radius:50%;
-	background-image:linear-gradient(red,green,blue,yellow,purple,tomato,aqua,seagreen,khaki,coral,light,blue);
-} */
 #menu{
 	color:rgb(18,250,62);
 	position:fixed;
@@ -84,20 +58,6 @@ body{
 	background-size:cover;
 	z-index:1;
 }
-#roundedpic~#heading{
-	position:absolute;
-	top:20px;
-	opacity:0;
-	transition:all .5s;
-	width:0;
-	overflow:hidden;
-}
-#roundedpic:hover~#heading{transform:translatex(50%);opacity:1;width:20%;}
-#roundedpic~#heading h1{
-	margin:0;
-	color:rgb(18,250,62);
-	text-shadow:0 0 25px rgb(18,250,62);
-}
 .btnfamily{
 	border:2px solid rgb(0,255,50);
 	font-size:30px;
@@ -125,11 +85,6 @@ body{
 	font-size:15px;
 }
 .connectlink:hover{color:silver;}
-#instagram::before,#instagram2::before{content:url(../pictures/ico/insta.png);margin:0 3px 3px 3px;float:left;}
-#email::before,#email2::before{content:url(../pictures/ico/gmail.png);margin:0 3px 3px 3px;float:left;}
-#linkedin::before{content:url(../pictures/ico/linkedin.png);margin:0 3px 3px 3px;float:left;}
-#fb::before{content:url(../pictures/ico/fb.png);margin:0 3px 3px 3px;float:left;}
-#yt::before{content:url(../pictures/ico/yt.png);margin:0 3px 3px 3px;float:left;}
 
 /* join telegram's hover style */
 
@@ -197,28 +152,6 @@ body{
 	justify-content:space-around;
 	align-items:center;	
 }
-.connect{
-	width:250px;
-}
-.contactHead{
-	color:rgb(18,250,62);
-	text-shadow:0 0 25px rgb(18,250,62);
-	text-align:center;
-}
-#team{
-	width:250px;
-	text-align:center;
-	margin:5% 0;
-}
-#contact{
-	width:250px;
-	display:flex;
-	align-items:center;
-	text-align:center;
-	flex-direction:column;
-	justify-content:center;	
-	color:white;
-}
 #credit{
 	background:rgb(20,20,20);
 	color:silver;
@@ -272,72 +205,6 @@ body{
 }
 
 
-
-/* here we style the response div and siblings */
-#externalContentContainer video{height:auto;width:60%;}
-#externalContentContainer{
-	position:fixed;
-	width:100%;
-	height:100%;
-	background-color:rgba(0,0,0,.9);
-	color:white;
-	z-index:6;
-	transition:all .2s linear;
-	overflow:hidden;
-	display:flex;
-	justify-content:center;
-	animation:showExternalContentContainer .3s linear;
-}
-@keyframes showExternalContentContainer{
-	0%{height:0%;opacity:0;}
-	100%{height:100%;opacity:1;}
-}
-#closeExternalContentContainer{
-	padding:8px 14px;
-	z-index:6;
-	position:absolute;
-	right:0px;
-	top:0;
-}
-.contactResponse{
-	width:60%;height:95%;
-	margin:10px;
-	background:rgb(20,20,10);
-	display:flex;
-	flex-direction:column;
-	align-items:center;
-}
-#contactUsFormSubmit,#form{
-	width:90%;
-	margin:2%;
-	display:flex;
-	flex-wrap:wrap;
-	justify-content:space-around;
-	align-items:center;
-}
-#form{
-	height:80%;
-	overflow:auto;
-}
-#contactUsFormHead{
-	color:white;
-	flex-basis:90%;
-	margin:0;
-	text-align:center;
-}
-#contactUsFormHead h1{
-	color:rgb(18,250,62);
-	margin:0;
-}
-#saySomething textarea{
-	resize:none;
-}
-#subjectOptions option{
-	background:grey;
-}
-#textareaLegend{transform:scale(1.8) translate(25px,30px);}
-
-
 /*New content by collaborators*/
 .circleTextboxgk{
 	text-align: center;
@@ -351,7 +218,7 @@ body{
 		}
 	.circleTextboxgk:focus{border-color: #fe9d07;}
 
-.dualborderTextboxaajtak{
+.dualBorderTextboxaajtak{
       border:2px solid yellow;
       outline:none;
       border-width:2px 9px 2px 9px;
