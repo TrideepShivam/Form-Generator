@@ -237,6 +237,24 @@
       transition:outline-width .1s;
     }
     .outlineTextboxaajtak:focus{outline-width:2px;}
+ .singleLineButtominputboxgk{ 
+	height: 20px;
+	width: 250px;
+	border:none;
+	} 
+.singleLineButtominputboxgk input{
+		height: 100%;
+		width: 100%;
+		border: none; 
+		font-size: 20px;
+		border-bottom: 2px solid silver; 
+		padding:15px 6px;
+		outline-color:oil;
+		outline-style:solid;
+		outline-width:0px;
+		transition:all .4s;
+		} 
+.singleLineButtominputboxgk input:focus{outline-width:3px;}
 
 
 
