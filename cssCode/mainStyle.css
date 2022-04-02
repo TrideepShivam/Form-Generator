@@ -10,16 +10,16 @@
 	margin:2%;
 	cursor:hand;
 	background:transparent;
-	transition: all .5s;
+	transition: box-shadow .5s;
 	text-decoration:none;
 }
 .btnfamily:hover{
-	background:rgba(0,255,50,.8);
-	box-shadow:0 0 10px rgba(255,255,255,.2),0 0 5px rgb(18,250,62),0 0 15px rgb(18,250,62),0 0 25px rgb(18,250,62);
+	background-image: linear-gradient(60deg, rgb(0,255,50), rgb(0,255,200));
 	border:2px solid rgba(255,255,255,.2);
 	color:white;
 }
 .btnfamily:active{transform:translatey(1px);}
+
 
 /* join telegram's hover style */
 .btnjoin{
