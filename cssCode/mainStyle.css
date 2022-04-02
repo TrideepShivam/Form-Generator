@@ -22,11 +22,11 @@
 .btnfamily:active{transform:translatey(1px);}
 
 /* join telegram's hover style */
-
 .btnjoin{
 	padding:30px 80px;
 	font-size:30px;
 	border:2px solid rgb(0,150,255);
+	border-radius:10px;
 	cursor:hand;
 	transition:all .5s;
 	text-decoration:none;
@@ -35,29 +35,26 @@
 	position:relative;
 	overflow:hidden;
 	text-decoration:none;
+	box-shadow:0 0 15px rgba(0,150,200,.2),0 0 15px rgba(0,150,200,.5);
 	margin:1%;	
-}
-.btnjoin:hover{
-	box-shadow:0 0 15px rgba(0,150,255,.9),0 0 15px rgba(0,150,255,.5);
-	background:white;
-	color:rgb(0,150,255);
 }
 .btnjoin span{
 	position:absolute;
-	top:7px;
+	top:10px;
 	left:51px;
 	transition: .2s;
 }
 .btnjoin span::after{
 	content:'\00bb';
 	position:absolute;
-	top:-3px;
-	right:-70px;
+	right:-35px;
 	opacity:0;
 	transition: .2s;
 }
-.btnjoin:hover span{left:25px;}
+.btnjoin:hover span{left:35px;}
 .btnjoin:hover span:after{opacity:1;}
+
+
 
 /*demo button style*/
 .btndemo{
