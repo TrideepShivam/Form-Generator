@@ -73,29 +73,13 @@
 	background:rgb(18,250,62);
 	transform:scale(1.05);
 }
+/*to highlight the text as designer or developer name*/
+.credit{text-decoration:none;color:rgb(18,250,62);}
 
-
-#contacts{
-	height:auto;
-	width:100%;
-	background:rgb(10,10,10);
-	display:flex;
-	flex-wrap:wrap;
-	justify-content:space-around;
-	align-items:center;	
-}
-#credit{
-	background:rgb(20,20,20);
-	color:silver;
-	display:flex;
-	align-items:center;
-	justify-content:center;	
-	text-align:center;
-}
-#credit{text-decoration:none;color:rgb(18,250,62);}
+/*textbox style with fav color rounded border*/
 .txt{
 	color:white;
-	width:50%;
+	width:300px;
 	font-size:20px;
 	background:transparent;
 	border:none;
