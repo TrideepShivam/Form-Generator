@@ -4,25 +4,39 @@ use this content delivery network to add main.js style methods...
 		
 		<script src='https://cdn.statically.io/gh/TrideepShivam/Form-Generator/main/jsCode/main.js'></script>
 
-for css style please link the cdn of mainStyle.css as...
+Methods:-
+
+1.	txtfocused(t);
 		
-		<link rel='stylesheet' type='text/css' href='https://cdn.statically.io/gh/TrideepShivam/Form-Generator/main/cssCode/mainStyle.css'>
+	this method is used to give style to the text box during focus. it will show the fieldset legend as its original state.
+	
+2.	txtUnfocused(t);
 
-describe here all the new methods with argument and the description.
+	this method is used to give style to the text box during unfocus. set the fieldset legend as the style of placeholder. and this method is also set as the validation and it returns the red bodered text with failed validation of type text, number and email.
 
-1. Special type of effect...
-   
-   
-   html:
-    
-      		<fieldset class='txtcontainer'>
-			<legend class='topname'>[your text which will be displayed as placeholder]</legend>
-			<input type='text' class='contactTxt' onfocusout='txtUnfocused(this)' onfocus='txtFocused(this)'>
-		</fieldset>
-      
-  
-  description:
-        use above html code to create your special effect textbox like plaeholder will be transferred to the top of the text box with transition.
-        use mentioned js and css cdn link.
-        
-2. 
+3.	checkboxWithSliderStyle(container,color);
+
+	this method is used to slide the checkbox with argumented color.
+	
+4.	redAlert(ele);
+
+	used to give argumented element as red border just like errored.
+	
+5.	checkAlphabate(str);
+
+	this is used to check argumented str is alphabate or not and gives true if it finds that it contains only alphabates or false if it finds rather than alphabates.
+
+6.	checkNumber(str);
+
+	this is used to check argumented str is number or not and gives true if it finds that it contains only numbers or false if it finds rather than numbers.
+
+7.	checkEmail(str);
+
+	this is used to check argumented str is email or not and gives true if it finds that text contains an '@' or max 2 '.' or false if it finds rather than this condition.
+	
+8.	checkNullValue(t);
+
+	this method returns true if argumented element have null value otherwise returns false.
+
+
+
