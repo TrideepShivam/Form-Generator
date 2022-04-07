@@ -1,56 +1,3 @@
-$(document).ready(function(){
-	$('body').on('click',"#menu",function(){
-		$(this).hide(500);
-		$("#topnav").css("width","100%");
-	});
-	$('body').on('click',"#closeNav",function(){
-		$("#menu").show(500);
-		$("#topnav").css("width","0%");
-	});
-});
-function closeExternalContentContainer(t){
-	t.parentElement.style.cssText="width:0%;z-index:0;";
-}
-function getContactData(t){
-	let send=true;
-	let fields=document.getElementsByClassName("contactTxt");
-	let len = fields.length;
-	let data={};
-	for(i=0;i<len-1;i++){
-		if(checkNullValue(fields[i])){
-			fields[i].parentElement.style.borderBottom="1px solid red";
-			alert("Please fill all Required Textboxes.");
-			i=len;
-			send=false;
-		}else{
-			let propertyName=fields[i].previousElementSibling.innerHTML;
-			data[propertyName]=fields[i].value;
-		}
-	}
-	if(send){/* write send in stead of false here */
-		t.innerHTML="Processing...";
-		t.disabled=true;
-		data.Comment=fields[i].value;
-		data = JSON.stringify(data);
-		let container=document.getElementById("externalContentContainer");
-		const xhr = new XMLHttpRequest();
-		xhr.onload = function(){
-			container.innerHTML="<button class='btndemo' id='closeExternalContentContainer' onclick='closeExternalContentContainer(this)'>&#10006;</button>"+this.responseText;
-		}
-		xhr.open("POST","/trideepshivam.com/response/sendContactToMail.php?v="+data,true);
-		xhr.send();
-	}
-}
-function getResponseHTMLCode(data){
-	document.body.innerHTML="<div id='externalContentContainer'><button class='btndemo' id='closeExternalContentContainer' onclick='closeExternalContentContainer(this)'>&#10006;</button></div>"+document.body.innerHTML;
-	let container=document.getElementById("externalContentContainer");
-	const xhr = new XMLHttpRequest();
-	xhr.onload = function(){		
-		container.innerHTML+=this.responseText;
-	}
-	xhr.open("POST","/trideepshivam.com/response/getContactOrDemo.php?v="+data,true);
-	xhr.send();
-}
 /* special txt effect */
 function txtFocused(t){
 	if(t.value==""){	
@@ -90,6 +37,23 @@ function txtUnfocused(t){
 		}
 	}
 }
+
+function checkboxWithSliderStyle(container,color){
+	let ele = container.children;
+	let t=ele[1];
+	let cb=ele[0];
+	if(!cb.checked){
+		t.style.cssText="transform:translatex(59px);border:2px solid rgb(0,255,200);box-shadow:0 0 2px black inset,0 0 3px rgb(0,255,200);";
+		container.style.backgroundColor=color;
+		cb.checked=true;
+	}else{
+		t.style.cssText="transform:translatex(0px);border:2px solid rgb(255,255,255);box-shadow:0 0 2px black inset,0 0 3px rgba(0,0,0,.4);";
+		container.style.backgroundColor="silver";
+		cb.checked=false;
+	}			
+}	
+
+
 function redAlert(ele){
 	ele.parentElement.style.border="1px solid red";
 	ele.value="";
