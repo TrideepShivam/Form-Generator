@@ -21,5 +21,13 @@ html:
     
 description: use above html code to create your special effect textbox like plaeholder will be transferred to the top of the text box with transition. use mentioned js and css cdn link.
 
+2. slider checkbox or radio button.
+html:
 
+    <div class="checkboxMiddleSection" onclick="checkboxWithSliderStyle(this,'your_color')">
+		<input type="checkbox" class="checkboxStyleOne">
+		<button class="checkboxSlider"></button>
+    </div>
+    
+description: use above html code to create your slider radio or checkbox with transition and set your color code what you want. use mentioned js and css cdn link.
 
