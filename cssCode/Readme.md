@@ -39,5 +39,45 @@ simply add the class name with its detailed style....
     
     desc:
       just use mentioned cdn and set the class name of textbox with placeholder as class="roundedTextboxFavBorder".
+6. class="circleTextboxgk"
+    html:
+
+       <input type="textbox" placeholder="name" class="circleTextboxgk">
+    
+    desc:
+      just use mentioned cdn and set the class name of textbox with placeholder as class="circleTextboxgk" default border is skyblue and on focus orange color.
+7. class="outlineTextboxaajtak"
+    html:
+
+       <input type="textbox" placeholder="name" class="outlineTextboxaajtak">
+    
+    desc:
+      just use mentioned cdn and set the class name of textbox with placeholder as class="outlineTextboxaajtak" default border green and on focus low opacity outline with green color.
+8. class="singleLineButtominputboxgk"
+    html:
+
+       <div class="singleLineButtominputboxgk"> 
+			<input type="text"  placeholder="Textbox">
+	    </div>
+    
+    desc:
+      just use mentioned cdn and set the class name of textbox with placeholder as class="singleLineButtominputboxgk" div with inner input, on focus div get black border.
+9. class="switchCheckboxgk"
+    html:
+
+       <input class="switchCheckboxgk" type="checkbox">
+    
+    desc:
+      just use mentioned cdn and set the class name of checkbox as class="switchCheckboxgk" it will create a beautifull slider checkbox.
+10. class="containerCircleCheckboxgk"
+    html:
+
+        <div class="containerCircleCheckboxgk">
+            <input type="checkbox" id="circle">
+            <label for="circle"></label>
+        </div>
+    
+    desc:
+      just use mentioned cdn and set the class name of checkbox as class="containerCircleCheckboxgk" it will create a beautifull circle checkbox.
 
 
