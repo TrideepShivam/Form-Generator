@@ -80,4 +80,13 @@ simply add the class name with its detailed style....
     desc:
       just use mentioned cdn and set the class name of checkbox as class="containerCircleCheckboxgk" it will create a beautifull circle checkbox.
 
+11. class="labelTextboxaajtak"
+    html:
 
+        <fieldset  class="labelTextboxaajtak">
+		<label>First name</label>
+		<input type="text">
+        </fieldset>
+    
+    desc:
+      just use mentioned cdn and set the class name of checkbox as class="labelTextboxaajtak" it will create a beautifull textbox which contain a heading always.
