@@ -24,20 +24,20 @@ description: use above html code to create your special effect textbox like plae
 2. slider checkbox or radio button.
 html:
 
-	<div class="checkboxMiddleSection" onclick="checkboxWithSliderStyle(this,'your_color')">
-		<input type="checkbox" class="checkboxStyleOne">
-		<button class="checkboxSlider"></button>
-	</div>
+		<div class="checkboxMiddleSection" onclick="checkboxWithSliderStyle(this,'your_color')">
+			<input type="checkbox" class="checkboxStyleOne">
+			<button class="checkboxSlider"></button>
+		</div>
     
 description: use above html code to create your slider radio or checkbox with transition and set your color code what you want. use mentioned js and css cdn link.
 
 3. glow checkbox button and class="outerCheckboxGlow".
 html:
 
-	<div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
-		<input type="checkbox">
-		<h3>&#10004;</h3>
-	</div>
+		<div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
+			<input type="checkbox">
+			<h3>&#10004;</h3>
+		</div>
     
 description: use above html code to create your glow checkbox with glowed transition. use mentioned js and css cdn link.
 
