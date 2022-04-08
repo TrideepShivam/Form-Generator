@@ -24,10 +24,10 @@ description: use above html code to create your special effect textbox like plae
 2. slider checkbox or radio button.
 html:
 
-    <div class="checkboxMiddleSection" onclick="checkboxWithSliderStyle(this,'your_color')">
+    	<div class="checkboxMiddleSection" onclick="checkboxWithSliderStyle(this,'your_color')">
 		<input type="checkbox" class="checkboxStyleOne">
 		<button class="checkboxSlider"></button>
-    </div>
+    	</div>
     
 description: use above html code to create your slider radio or checkbox with transition and set your color code what you want. use mentioned js and css cdn link.
 
