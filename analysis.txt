@@ -51,7 +51,7 @@ Requirement
 style:- 
 	1. style of all input box(we provide option)
 	2. theme color(button + border)
-	3. we have to design:- checkbox,radio button ,input box ,range
+	3. we have to design:- checkbox,radio button ,text box ,range
 
 		
 
