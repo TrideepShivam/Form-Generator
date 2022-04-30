@@ -98,7 +98,7 @@
 	width:240px;
 	height:auto;
 	border:none;
-	background:transparent;
+	background:rgba(255,255,255,.5);
 	border-bottom:1px solid cornflowerblue;
 	transition:all .2s linear;
 }
