@@ -107,4 +107,25 @@ function outerCheckboxGlow(ele){
 
 
 
+function getTrafficLight(objs)
+{
+	if (objs .childNodes[5].checked==false)
+	{
+		objs .childNodes[5].checked=true;
+		objs.childNodes[3].style.cssText="border:2px solid gray;background:rgb(255,0,0,.4);box-shadow:0px 0px 4px gray inset, 0px 0px 4px gray inset;";
+		setTimeout(function(){
+			objs.childNodes[1].style.cssText="border:2px solid #E2E2E2;background:rgb(84,156,48);box-shadow:0px 0px 5px rgba(84,156,48,.7), 0px 0px 5px rgba(84,156,48,.7);";
+			},200);
+	}
+	else{
+		objs .childNodes[5].checked=false;
+		objs.childNodes[1].style.cssText="border:2px solid gray;background:rgba(84,156,48,.4);box-shadow:0px 0px 4px gray inset, 0px 0px 4px gray inset;";
+		setTimeout(function(){
+			objs.childNodes[3].style.cssText="border:2px solid #E2E2E2;background:rgb(255,0,0);box-shadow:0px 0px 4px (187,30,16,.7) inset, 0px 0px 4px (187,30,16,.7) inset;";
+		},200);
+	}
+}
+
+
+
 
