@@ -63,4 +63,17 @@ html:
 	
 description: use above html code to create a range with popupbox value displayer on hover effect.
 
+6.box range with class="popuprange".
+html:
+
+	<div class="BoxRange" >
+		<input type="range" max="250" min="0" oninput="boxWalaRange(this)">
+		<div  title="Use arrow key for minor change">50</div>	
+	</div>
+
+description: use above html code to create a range into a cantainer box with value displayer on input effect.
+
+
+
+
 
