@@ -31,7 +31,7 @@ html:
     
 description: use above html code to create your slider radio or checkbox with transition and set your color code what you want. use mentioned js and css cdn link.
 
-3. glow checkbox button and class="outerCheckboxGlow".
+3. glow checkbox button and class="outerCheckboxaajtak".
 html:
 
 		<div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
@@ -40,5 +40,17 @@ html:
 		</div>
     
 description: use above html code to create your glow checkbox with glowed transition. use mentioned js and css cdn link.
+
+4.trafic light checkbox with class="trafficOuter".
+html:
+	
+	<div class="trafficOuter" onclick="getTrafficLight(this)" title="red=disagree,green=agree">
+		<div ></div>
+		<div ></div>
+		<input type="checkbox">
+	</div>
+
+description: use above html code to create your checkbox with traffic signal style. if user select green the value will be 'agree' if red then 'disagree'.
+
 
 
