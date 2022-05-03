@@ -306,7 +306,6 @@
     	float:right;
     	display:none;
 } 
-
 .btnRoundedBorderDanger{
 	padding:18px 40px; 
 	color:tomato;
@@ -322,6 +321,40 @@
 	background-color:tomato;
 	color:white;
 	}
+
+.trafficOuter{
+		height:48px;
+		width:25px;
+		border-radius:11px;
+		border:2px solid gray;
+		background:silver;
+		display:block;
+		padding-top:1px;
+		cursor:hand;
+		margin:2px;
+}
+.trafficOuter div:nth-child(1), .trafficOuter div:nth-child(2){
+		height:35%;
+		width:70%;
+		margin:7.5%;
+		border:2px solid gray;
+		border-radius:10px;
+		background:rgb(84,156,48,.4);
+		box-shadow:0px 0px 4px gray inset, 0px 0px 4px gray inset;
+		transition:all .3s;
+		
+}
+.trafficOuter div:nth-child(2){
+		border:2px solid #E2E2E2;	
+		background:red;
+		box-shadow:0px 0px 4px rgba(187,30,16,.7), 0px 0px 4px rgba(187,30,16,.7);
+		transition: all .3s;
+}
+.trafficOuter input{
+	-webkit-appearance:none;
+	float:right;
+	display:none;
+}
 
 
 
