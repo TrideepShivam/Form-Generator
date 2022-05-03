@@ -52,5 +52,15 @@ html:
 
 description: use above html code to create your checkbox with traffic signal style. if user select green the value will be 'agree' if red then 'disagree'.
 
+5.popup box range with class="popuprange".
+html:
+
+	<div class="popuprange">
+		<div>50</div>
+		<input type="range" max="222" min="0" oninput="popuprangeinput(this,max)">
+		<div></div>
+	</div>
+	
+description: use above html code to create a range with popupbox value displayer on hover effect.
 
 
