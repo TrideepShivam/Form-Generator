@@ -64,7 +64,7 @@
 	border:none;
 	margin:1%;	
 	background:rgba(18,250,62,.9);
-	box-shadow:0 0px 20px rgba(0,0,0,.5);
+	box-shadow:0 0px 10px rgba(0,0,0,.3);
 	text-decoration:none;
 	transition:.5s;
 	cursor:hand;
