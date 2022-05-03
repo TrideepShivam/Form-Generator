@@ -127,5 +127,19 @@ function getTrafficLight(objs)
 }
 
 
+function popuprangeinput(elem,max){
+	let pointers=elem.previousElementSibling;
+	let runDiv=elem.nextElementSibling;
+	let valuess=elem .value;
+	let maximum=max/100;
+	pointers.innerHTML=valuess;
+	pointers.style.left=(valuess/maximum)+"%";
+	runDiv.style.width=(valuess/maximum)+"%";
+}
+
+
+
+
+
 
 
