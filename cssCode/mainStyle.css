@@ -357,6 +357,65 @@
 }
 
 
+.popuprange{
+	height:50px;;
+	width:200px;
+	position:relative;
+	margin:20px;
+	padding:0px;
+}
+.popuprange input{
+	-webkit-appearance:none;
+	height:4px;
+	width:107%;
+	background:aqua;
+	margin:2px;
+	position:absolute;
+	bottom:0px;
+	left:7px;
+	margin:0px;
+	border-radius:7px;
+	cursor:hand;
+	outline:0px;
+}
+.popuprange input::-webkit-slider-thumb{
+	-webkit-appearance:none;
+	height:15px;
+	width:15px;
+	background:aqua;
+	box-shadow:0px 0px 4px black;
+	border-radius:10px;
+}
+.popuprange div:nth-child(1){
+	height:24px;
+	width:30px;
+	padding-top:6px;
+	background:aqua;
+	border-radius:50%;
+	position:absolute;
+	top:0%;
+	left:50%;
+	text-align:center;
+	color:gray;
+	font-weight:bold;
+	font-family:arial;
+	transform:scale(0);
+	transition:transform .2s;
+	transform-origin:bottom;
+	box-shadow:0px 0px 3px gray;
+}
+.popuprange:hover div:nth-child(1){transform:scale(1);}
+.popuprange div:nth-child(3){
+	position:absolute;
+	background:gray;
+	height:4px;
+	border-radius:20px;
+	width:50%;
+	left:7px;
+	bottom:0px;
+	z-index:-2px;
+}
+
 
 
 
