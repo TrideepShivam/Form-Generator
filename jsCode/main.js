@@ -138,6 +138,15 @@ function popuprangeinput(elem,max){
 }
 
 
+function boxWalaRange(obj){
+	let divNumber=obj.nextElementSibling;
+	divNumber.innerHTML=obj .value;
+	let valdig=parseInt(obj .value)-200;
+	obj.style.background="rgb(50,"+obj.value+","+valdig+")";
+	obj.parentElement.style.borderColor="rgb(50,"+obj.value+","+valdig+")";
+	divNumber.style.color="rgb(50,"+obj.value+","+valdig+")";
+}
+
 
 
 
