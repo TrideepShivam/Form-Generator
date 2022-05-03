@@ -417,6 +417,41 @@
 }
 
 
+.BoxRange{
+	height:32px;
+	width:198px;
+	border-radius:8px;
+	border:2.5px solid gray;
+	display:flex;
+	justify-content:flex-start;
+	align-items:center;
+	padding:3px 3px 3px 7px;
+}
+.BoxRange input{
+	-webkit-appearance:none;
+	height:3px;
+	width:75%;
+	background:gray;
+	border-radius:5px;
+	outline:0px;
+}
+.BoxRange input::-webkit-slider-thumb{
+	-webkit-appearance:none;
+	height:15px;
+	width:15px;
+	border-radius:3px;
+	background:gray;
+	box-shadow:0px 0px 3px black;
+	cursor:hand;
+}
+.BoxRange div{
+	margin-left:15px;
+	color:gray;
+	font-family:arial;
+	font-weight:bold;
+}
+
+
 
 
 
