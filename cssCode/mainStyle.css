@@ -307,6 +307,22 @@
     	display:none;
 } 
 
+.btnRoundedBorderDanger{
+	padding:18px 40px; 
+	color:tomato;
+	border:1px solid tomato;
+	font-size:20px;
+	border-radius:30px;
+	background-color:transparent;
+	transition:.2s;
+	cursor:hand;
+	}
+.btnRoundedBorderDanger:hover{
+	box-shadow:0px 0px 10px rgba(0,0,0,.3);
+	background-color:tomato;
+	color:white;
+	}
+
 
 
 
