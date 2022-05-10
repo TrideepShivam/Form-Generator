@@ -1,0 +1,36 @@
+0.theme design with help and documentation.(pending)
+1.mainform layout design(pending)
+2.add element modal popup (pending)
+3.theme color box.
+4.Notification box merging with body and recieves some text.
+
+
+Functions:
+	1. theme design:
+		a. an add element to live form function which recieves inputed element data as an object.
+		
+		b. 
+		
+	2. mainform layout design:
+		a. a function which identifies the type of clicked element and  calls the element modal creator function with element type argument.
+		
+		b. a function which accepts new element object and call add history function and create live form function.
+		
+		c. a function which adds history with delete button and add new element id to the object.
+		
+		d. a function which creates element at live form and append as the last element of the live form.
+		
+		e. delete function which deletes the specific id element which is described in the history panel.
+		
+		
+		
+		
+	3. add element modal popup:
+		a. popup element Modal Creator function with element type argument like textbox, radio, email, checkbox etc.
+		
+		b. (optional) an ajax function which requests to the server to give some part of the element modal who's type is described in request.
+		
+		c. a send element function which collects all data of new element modal as an object and send it to the mainform function.
+		
+		d. for option and radio button we have to create a function who creates the next labelbox after focusout on the last box.
+		
