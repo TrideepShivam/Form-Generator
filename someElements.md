@@ -73,7 +73,9 @@ html:
 
 description: use above html code to create a range into a cantainer box with value displayer on input effect.
 
+7. notifyMe('msg','color');
 
+description: use above method with arguments to create a notification box with argumented message at the bottom center of the body. it includes 300px width with a top centered close button to disappear the notification box. color argument will be used to set your notification box border and close box border. it will appear from opacity 0 to 1.
 
 
 
