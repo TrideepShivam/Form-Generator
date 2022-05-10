@@ -148,6 +148,34 @@ function boxWalaRange(obj){
 }
 
 
+function notifyMe(msg='Please provide a message.',c='yellow'){
+    let newContainer = document.createElement("div");
+    newContainer.setAttribute('class','noticeBoard');
+    let close = document.createElement("button");
+    close.innerHTML="&#10005;";
+    newContainer.appendChild(close);
+    close.style.cssText="position: absolute;top: -20px;left: 142px;border: none;border-radius: 50%;background: #4f4f4f;color: white;font-size: 18px;font-weight: bold;margin-bottom: 5px;cursor: pointer;border:1px solid "+c;
+    let txt = document.createTextNode(msg);
+    newContainer.style.border="1px solid "+c;
+    newContainer.appendChild(txt);
+    document.body.appendChild(newContainer);
+    close.addEventListener('click',function(){
+        document.body.removeChild(this.parentElement);
+    });
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
