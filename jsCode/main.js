@@ -9,7 +9,7 @@ function resizeBox(){
         detailDiv.style.cssText="height:8%;top:2%;";
         detailDiv.childNodes[11].style.cssText="display:block;filter:opacity(1);";
         addvance.children[4].style.cssText="display:none;filter:opacity(0);";
-        addvance.style.cssText="height:71.5%;border-color:transparent;";
+        addvance.style.cssText="height:71.5%;border-color:transparent;background-color:transparent;cursor:default;";
         for(i=0;i<10;i++){
             detailDiv.childNodes[i].style="filter:opacity(0)";
             if(i>0&&i<9){
@@ -25,9 +25,9 @@ function detailopener(){
     let add=document.getElementById("advanceBox");
     let detailDiv= document.getElementById("detailBox");
         detailDiv.style.cssText="height:64%;top:4%;";
-        add.style.cssText="height:6%;border-color:lightgreen;";
+        add.style.cssText="height:6%;background-color:transparent;";
         detailDiv.childNodes[11].style.cssText="display:none;filter:opacity(0);";
-        add.children[4].style.cssText="display:inline-block;filter:opacity(1);";
+        
         for(i=0;i<add.children.length;i++){
         if(i!=4)
         add.children[i].style.filter="opacity(0)";
@@ -39,16 +39,17 @@ function detailopener(){
                 detailDiv.childNodes[j].style="filter:opacity(1);";
             },80);
             setTimeout(function(){
+                add.style.cssText="background-color:#46ea8d;border-color:#46ea8d;";
+                add.children[4].style.cssText="display:inline-block;filter:opacity(1);";
             for(i=0;i<add.children.length;i++)
                 if(i!=4)
                 add.children[i].style.display="none";
-                },400);
+                },330);
                 
 }
 
 function elelistopener(){
     let ele=document.getElementById("elementList");
-    
     if(ele.style.height!="0%"){
     let options=[];
     for(let i=0;i<ele.children.length;i++){
