@@ -1,5 +1,6 @@
 :root {
     --themeColor: #46ea8d;
+    --basicFont: Segoe UI Semibold;
 }
 
 body {
@@ -30,7 +31,7 @@ body {
     position: relative;
     margin: 0px 0vw 0px 10vw;
     border-radius:20px 0px 0px 20px;
-    border:1px solid rgb(70, 234, 141);
+    border:.1vw solid rgb(70, 234, 141);
     border-right-width: 0px;
 }
 
@@ -41,13 +42,13 @@ body {
     padding: 2% 2%;
     margin: 0px 10vw 0px 0vw;
     border-radius:0px 20px 20px 0px;
-    border:1px solid rgb(70, 234, 141);
+    border:.1vw solid rgb(70, 234, 141);
     border-left-width: 0px;
 }
 
 #detailBox {
     height: 64%;
-    width: 80%;
+    width: 88%;
     border-radius: 9px;
     position: absolute;
     top: 4%;
@@ -65,18 +66,22 @@ body {
     height: 2.5vw;
     width: 82%;
     margin: 4.5%;
-    border-style: solid;
     border-radius: 15px;
     background: transparent;
     outline: none;
     padding: 0px 3.5% 0px 3.5%;
     color: #919191;
     color: white;
-    font-size: 1.3vw;
+    font-size: 1.2vw;
     resize: none;
-    border-width: 1.5px;
+   border: 1.5px solid #b3b3b3;
     transition: filter .4s;
+    letter-spacing: .08vw;
 }
+#detailBox input::-ms-input-placeholder {
+    color:#b3b3b3;letter-spacing: 0.95vw;
+  }
+  #detailBox input::placeholder{color:#b3b3b3;letter-spacing: .095vw;}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -88,9 +93,9 @@ input::-webkit-inner-spin-button {
     border-color: rgb(70, 234, 141);
 }
 
-#detailBox p {
+#detailBox p{
     color: rgb(200, 200, 200);
-    font-size: 17px;
+    font-size: 1.2vw;
     margin: 5px;
     position: absolute;
     display: none;
@@ -98,10 +103,16 @@ input::-webkit-inner-spin-button {
     transition: filter .4s;
 
 }
+#advanceBox label{
+    font-size: 1.03vw;
+    letter-spacing: .04vw;
+    font-family: 'Times New Roman', Times, serif;
+}
 
 #detailBox p:hover {
     color: silver;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 #detailBox div {
@@ -112,8 +123,7 @@ input::-webkit-inner-spin-button {
 
 #advanceBox {
     height: 6%;
-    width: 69.5%;
-    border: 0px solid gray;
+    width: 78%; /*69.5%*/
     position: absolute;
     bottom: 17%;
     display: flex;
@@ -121,7 +131,7 @@ input::-webkit-inner-spin-button {
     align-items: center;
     flex-direction: column;
     transition: height .4s, border-color .4s, background-color .2s;
-    border: 1px solid var(--themeColor);
+    border: .12vw solid var(--themeColor);
     overflow: hidden;
     border-radius: 12px;
     background-color: var(--themeColor);
@@ -141,7 +151,10 @@ input::-webkit-inner-spin-button {
     display: none;
     filter: opacity(1);
     transition: filter .4s, border-radius .5s;
-
+    font-size: 1.2vw;
+    letter-spacing: .07vw;
+    font-family: var(--basicFont);
+    cursor: pointer;
 }
 
 #taglistOpener:focus {
@@ -176,6 +189,7 @@ input::-webkit-inner-spin-button {
     text-align: center;
     filter: opacity(0);
     font-weight: lighter;
+    letter-spacing: .06vw;
     transition: filter .3s, margin-top .3s;
 }
 
@@ -215,5 +229,42 @@ input::-webkit-inner-spin-button {
     font-weight: bolder;
     font-family: Segoe UI Semibold;
     color:black;
-    
+    font-size: 1.1vw;
+    letter-spacing: .08vw;
+}
+.commonbtn{
+ height:2.7vw;
+ width: 11.65vw; /* 9.7vw */
+ border: none;
+ background-color:#7e7c7c;
+ font-size: 1.15vw;
+ font-family: Segoe UI Semibold;
+ letter-spacing: .08vw;
+ transition: transform .2s;
+ cursor: pointer;
+}
+#inputBody div:last-child{
+   width:78%;  /* 65 */
+   display: flex;
+   justify-content: space-between;
+   position: absolute;
+   bottom: 2.8vw;
+
+}
+#inputBody div:last-child button:hover{background-color: #5e5d5d;}
+#okbtn{
+    border-radius: 10px 0px 0px 10px;
+}
+#cancelbtn{
+    border-radius: 0px 10px 10px 0px;
+}
+#themebtn{
+    border-radius: 9px;
+    margin-top: 1vw;
+    width: 99%;
+    background-color: transparent;
+    border:.15vw solid #838282;
+    display:none;
+    transition: filter .4s;
+    color: #838282;
 }

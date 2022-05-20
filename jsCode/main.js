@@ -8,11 +8,11 @@ function resizeBox(){
     let addvance=document.getElementById("advanceBox");
         detailDiv.style.cssText="height:8%;top:2%;";
         detailDiv.childNodes[11].style.cssText="display:block;filter:opacity(1);";
-        addvance.children[4].style.cssText="display:none;filter:opacity(0);";
+        addvance.children[5].style.cssText="display:none;filter:opacity(0);";
         addvance.style.cssText="height:71.5%;border-color:transparent;background-color:transparent;";
         for(i=0;i<10;i++){
             detailDiv.childNodes[i].style="filter:opacity(0)";
-            if(i>0&&i<9){
+            if(i>0&&i<11){
             addvance.childNodes[i].style="display:inline-block;";
         }
             }
@@ -29,7 +29,7 @@ function detailopener(){
         detailDiv.childNodes[11].style.cssText="display:none;filter:opacity(0);";
         
         for(i=0;i<add.children.length;i++){
-        if(i!=4)
+        if(i!=5)
         add.children[i].style.filter="opacity(0)";
     }
         for(i=0;i<10;i++)
@@ -40,9 +40,9 @@ function detailopener(){
             },80);
             setTimeout(function(){
                 add.style.cssText="background-color:#46ea8d;border-color:#46ea8d;";
-                add.children[4].style.cssText="display:inline-block;filter:opacity(1);";
+                add.children[5].style.cssText="display:inline-block;filter:opacity(1);";
             for(i=0;i<add.children.length;i++)
-                if(i!=4)
+                if(i!=5)
                 add.children[i].style.display="none";
                 },330);
                 
