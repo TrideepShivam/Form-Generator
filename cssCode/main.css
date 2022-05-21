@@ -238,7 +238,7 @@ input::-webkit-inner-spin-button {
  border: none;
  background-color:#7e7c7c;
  font-size: 1.15vw;
- font-family: Segoe UI Semibold;
+ font-family: var(--basicFont);
  letter-spacing: .08vw;
  transition: transform .2s;
  cursor: pointer;
