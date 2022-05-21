@@ -6,6 +6,7 @@
 body {
     margin: 0;
     overflow:hidden;
+    font-family:var(--basicFont);
 }
 
 #main {
@@ -44,6 +45,12 @@ body {
     border-radius:0px 20px 20px 0px;
     border:.1vw solid rgb(70, 234, 141);
     border-left-width: 0px;
+}
+
+#heading{
+    color:#efefef;
+    text-align:center;
+    margin:0;
 }
 
 #detailBox {

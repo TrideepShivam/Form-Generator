@@ -3,47 +3,45 @@ function getNotification(t){
     notifyMe(m,'#46ae8d');
 }
 
-function resizeBox(){
-    let detailDiv= document.getElementById("detailBox");
-    let addvance=document.getElementById("advanceBox");
+function advanceOpener(addvance){
+    let detailDiv= addvance.previousElementSibling;
         detailDiv.style.cssText="height:8%;top:2%;";
-        detailDiv.childNodes[11].style.cssText="display:block;filter:opacity(1);";
-        addvance.children[5].style.cssText="display:none;filter:opacity(0);";
+        detailDiv.children[detailDiv.children.length-1].style.cssText="display:block;filter:opacity(1);";
+        addvance.children[addvance.children.length-1].style.cssText="display:none;filter:opacity(0);";
         addvance.style.cssText="height:71.5%;border-color:transparent;background-color:transparent;";
-        for(i=0;i<10;i++){
-            detailDiv.childNodes[i].style="filter:opacity(0)";
-            if(i>0&&i<11){
-            addvance.childNodes[i].style="display:inline-block;";
-        }
+        for(i=0;i<detailDiv.children.length-1;i++){
+            detailDiv.children[i].style="filter:opacity(0)";
+            if(i>=0&&i<addvance.children.length-1){
+                addvance.children[i].style="display:inline-block;";
+            }
             }
         setTimeout(function(){
             for(i=0;i<10;i++)
                 detailDiv.childNodes[1].style="display:none";
         },400);	
 }
-function detailopener(){
-    let add=document.getElementById("advanceBox");
-    let detailDiv= document.getElementById("detailBox");
+function detailOpener(detailDiv){
+    let add=detailDiv.nextElementSibling;
         detailDiv.style.cssText="height:64%;top:4%;";
         add.style.cssText="height:6%;background-color:transparent;";
-        detailDiv.childNodes[11].style.cssText="display:none;filter:opacity(0);";
+        detailDiv.children[detailDiv.children.length-1].style.cssText="display:none;filter:opacity(0);";
         
         for(i=0;i<add.children.length;i++){
         if(i!=5)
         add.children[i].style.filter="opacity(0)";
     }
-        for(i=0;i<10;i++)
-            detailDiv.childNodes[i].style="display:flex;filter:opacity(0);";
+        for(i=0;i<detailDiv.children.length-1;i++)
+            detailDiv.children[i].style="display:flex;filter:opacity(0);";
             setTimeout(function(){
-                for(j=0;j<10;j++)
-                detailDiv.childNodes[j].style="filter:opacity(1);";
+                for(j=0;j<detailDiv.children.length-1;j++)
+                detailDiv.children[j].style="filter:opacity(1);";
             },80);
             setTimeout(function(){
                 add.style.cssText="background-color:#46ea8d;border-color:#46ea8d;";
                 add.children[5].style.cssText="display:inline-block;filter:opacity(1);";
-            for(i=0;i<add.children.length;i++)
-                if(i!=5)
-                add.children[i].style.display="none";
+                for(i=0;i<add.children.length;i++)
+                    if(i!=5)
+                    add.children[i].style.display="none";
                 },330);
                 
 }
