@@ -1,6 +1,6 @@
 function getNotification(t){
     let m="selected button is "+t.value;
-    notifyMe(m,'#46ae8d');
+    notifyMe(m,'#46ae8d'); 
 }
 
 function advanceOpener(addvance){

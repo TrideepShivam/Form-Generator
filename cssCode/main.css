@@ -242,8 +242,8 @@ input::-webkit-inner-spin-button {
 .commonbtn{
  height:2.7vw;
  width: 11.65vw; /* 9.7vw */
- border: none;
- background-color:#7e7c7c;
+ border: 1px solid #91e7d9;;
+ background-color:#b0b0b0;
  font-size: 1.15vw;
  font-family: var(--basicFont);
  letter-spacing: .08vw;
@@ -258,9 +258,10 @@ input::-webkit-inner-spin-button {
    bottom: 2.8vw;
 
 }
-#inputBody div:last-child button:hover{background-color: #5e5d5d;}
+#inputBody div:last-child button:hover{background-color: #91e7d9;}
 #okbtn{
     border-radius: 10px 0px 0px 10px;
+    background-color: #39beca;
 }
 #cancelbtn{
     border-radius: 0px 10px 10px 0px;
