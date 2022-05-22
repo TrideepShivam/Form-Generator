@@ -1,5 +1,59 @@
+:root {
+    --themeColor: #46ea8d;
+    --basicFont: Segoe UI Semibold;
+}
 body {
     margin: 0;
     padding: 0;
-    overflow:hidden;
+    overflow: hidden;
+    font-family: var(--basicFont);
+    background: #151515;
+}
+#SelectThemeButton {
+    width: 12%;
+    height: 6%;
+    margin: 15% 0% 0% 55%;
+    position: absolute;
+    font-size: 23px;
+    text-align: center;
+    border:.1vw solid #d6cc10;
+    border-radius: 0px 20px 0px 20px;
+    background-color: #212121;
+    color: white;
+}
+#Text {
+    font-size: 25px;
+    color: white;
+    margin-left: 20px;
+}
+.ThemeSection {
+    width: 22vw;
+    height: 39vw;
+    margin: 65px 290px 0px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    background: #212121;
+    display: block;
+    border-radius:0px 20px 0px 20px;
+    border:.1vw solid rgb(70, 234, 141);
+}
+.TextBoxSection {
+    width: vw;
+    height: vw;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+}
+/* .TextBox #TI { width: 70%; padding: 7px; margin-bottom: 8px; }
+.TextBox #RB { width: 0%; padding: 7px; } */
+.RadioSection {
+    width: 22vw;
+    height: 2vw;
+    position: relative;
+}
+.RangeSection {
+    width: 22vw;
+    height: 2vw;
+    position: relative;
 }

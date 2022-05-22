@@ -2,23 +2,20 @@
     --themeColor: #46ea8d;
     --basicFont: Segoe UI Semibold;
 }
-
 body {
     margin: 0;
-    overflow:hidden;
-    font-family:var(--basicFont);
+    overflow: hidden;
+    font-family: var(--basicFont);
 }
-
 #main {
-    width:100%;
-    height:100%;
-    position:fixed;
+    width: 100%;
+    height: 100%;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #151515;
 }
-
 #inputBody {
     height: 39vw;
     width: 26vw;
@@ -35,7 +32,6 @@ body {
     border:.1vw solid rgb(70, 234, 141);
     border-right-width: 0px;
 }
-
 #outputBody {
     height: 39vw;
     width: 40vw;
@@ -46,13 +42,11 @@ body {
     border:.1vw solid rgb(70, 234, 141);
     border-left-width: 0px;
 }
-
 #heading{
     color:#efefef;
     text-align:center;
     margin:0;
 }
-
 #detailBox {
     height: 64%;
     width: 88%;
@@ -65,10 +59,8 @@ body {
     flex-direction: column;
     transition: all .4s;
     overflow: hidden;
-    border: 1px solid #212121;
-   
+    border: 1px solid #212121;  
 }
-
 #detailBox input {
     height: 2.5vw;
     width: 82%;
@@ -95,11 +87,9 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
 #detailBox input:focus {
     border-color: rgb(70, 234, 141);
 }
-
 #detailBox p{
     color: rgb(200, 200, 200);
     font-size: 1.2vw;
@@ -108,26 +98,22 @@ input::-webkit-inner-spin-button {
     display: none;
     filter: opacity(0);
     transition: filter .4s;
-
 }
 #advanceBox label{
     font-size: 1.03vw;
     letter-spacing: .04vw;
     font-family: 'Times New Roman', Times, serif;
 }
-
 #detailBox p:hover {
     color: silver;
     text-decoration: underline;
     cursor: pointer;
 }
-
 #detailBox div {
     display: flex;
     flex-direction: row;
     margin: 0% 1.5% 0% 1.5%;
 }
-
 #advanceBox {
     height: 6%;
     width: 78%; /*69.5%*/
@@ -144,9 +130,6 @@ input::-webkit-inner-spin-button {
     background-color: var(--themeColor);
    
 }
-
-
-
 #taglistOpener {
     height: 2.6vw;
     width: 99%;
@@ -163,16 +146,13 @@ input::-webkit-inner-spin-button {
     font-family: var(--basicFont);
     cursor: pointer;
 }
-
 #taglistOpener:focus {
     border-radius: 9px 9px 0px 0px;
     background:var(--themeColor);
 }
-
 #taglistOpener:hover {
     background:var(--themeColor);
 }
-
 #elementList {
     position: absolute;
     top: 8.8%;
@@ -184,7 +164,6 @@ input::-webkit-inner-spin-button {
     transition: filter .4s, height .4s;
 
 }
-
 #elementList option {
     height: 2vw;
     width: auto;
@@ -199,17 +178,14 @@ input::-webkit-inner-spin-button {
     letter-spacing: .06vw;
     transition: filter .3s, margin-top .3s;
 }
-
 #elementList option:hover {
     background: #5c5c5c;
     color: white;
     font-weight: bold;
 }
-
 #elementList option:last-child {
     border-radius: 0vw 0vw 1vw 1vw;
 }
-
 #historyPanel {
     height: 21vw;
     width: 99%;
@@ -220,7 +196,6 @@ input::-webkit-inner-spin-button {
     display: none;
     transition: filter .4s;
 }
-
 #advanceBox label {
     color: silver;
     margin: 0px;
@@ -256,7 +231,6 @@ input::-webkit-inner-spin-button {
    justify-content: space-between;
    position: absolute;
    bottom: 2.8vw;
-
 }
 #inputBody div:last-child button:hover{background-color: #5e5d5d;}
 #okbtn{
