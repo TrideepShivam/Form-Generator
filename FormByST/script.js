@@ -46,27 +46,26 @@ function detailOpener(detailDiv){
                 
 }
 
-function elelistopener(){
-    let ele=document.getElementById("elementList");
-    if(ele.style.height=="0%"){
-    let options=[];
-    for(let i=0;i<ele.children.length;i++){
-    options[i]=ele.children[i];
-    options[i].addEventListener("click",elelistcloser);
-   }
-    ele.style.cssText="filter:opacity(1);height:40%;";
-    for(let j=1;j<=ele.children.length;j++){
-        setTimeout(function(){
-            options[j-1].style.cssText="margin:0vw;filter:opacity(1);";
-        },j*30);
+function elelistopener(mainwala){
+    let ele=mainwala.nextElementSibling;
+    if(ele.children[1].style.margin=="0.4vw"||ele.children[1].style.margin==""){
+         ele.style.cssText="filter:opacity(1);height:auto;";
+         let options=[];
+         for(let i=0;i<ele.children.length;i++){
+             options[i]=ele.children[i];
+             options[i].addEventListener('click',function(){
+                elelistcloser(ele);});
+         }
+         for(let j=0;j<=ele.children.length;j++){
+            setTimeout(function(){
+                options[j].style.cssText="margin:0vw;filter:opacity(1);";
+            },j*30);
+         }
+    } else{
+        elelistcloser(ele);
     }
-} else{
-    elelistcloser();
-
 }
-}
-function elelistcloser(){
-    let tager=document.getElementById("elementList");
+function elelistcloser(tager){    /*tager is elementList id's element*/
     tager.style.cssText="bottom:5vw;filter:opacity(0);";
     for(let i=0;i<tager.children.length;i++)
     tager.children[i].style.cssText="filter:opacity(0);margin:0vw;";
