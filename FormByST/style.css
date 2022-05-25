@@ -61,33 +61,34 @@ body {
     overflow: hidden;
     border: 1px solid #212121;  
 }
-#detailBox input {
+.themeInputBox{
     height: 2.5vw;
     width: 82%;
-    margin: 4.5%;
     border-radius: 15px;
     background: transparent;
     outline: none;
     padding: 0px 3.5% 0px 3.5%;
     color: #919191;
-    color: white;
     font-size: 1.2vw;
     resize: none;
-   border: 1.5px solid #b3b3b3;
+    border: 1.5px solid #b3b3b3;
     transition: filter .4s;
     letter-spacing: .08vw;
 }
-#detailBox input::-ms-input-placeholder {
+#detailBox input {    
+    margin: 4.5%;    
+}
+.themeInputBox::-ms-input-placeholder {
     color:#b3b3b3;letter-spacing: 0.95vw;
   }
-  #detailBox input::placeholder{color:#b3b3b3;letter-spacing: .095vw;}
+.themeInputBox::placeholder{color:#b3b3b3;letter-spacing: .095vw;}
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-#detailBox input:focus {
+.themeInputBox:focus {
     border-color: rgb(70, 234, 141);
 }
 #detailBox p{
