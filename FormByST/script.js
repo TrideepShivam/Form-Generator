@@ -1,6 +1,16 @@
 function getNotification(t){
-    let m="selected button is "+t.value;
-    notifyMe(m,'#46ae8d'); 
+    let m="Use only letter "+t.value;
+if (/^[a-zA-Z ]+$/.test(t.value)||t.value=="") {
+    t.style.cssText="border-color:#46ea8d;";
+} else {
+    t.style.cssText="border-color:red;";
+    notifyMe(m,'red');
+}
+   
+
+       
+    
+    
 }
 
 function advanceOpener(addvance){
@@ -14,7 +24,7 @@ function advanceOpener(addvance){
             if(i>=0&&i<addvance.children.length-1){
                 addvance.children[i].style="display:inline-block;";
             }
-            }
+        }
         setTimeout(function(){
             for(i=0;i<10;i++)
                 detailDiv.childNodes[1].style="display:none";
