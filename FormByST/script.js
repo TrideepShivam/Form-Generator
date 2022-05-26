@@ -1,17 +1,17 @@
 function getNotification(t){
-    let m="Use only letter "+t.value;
-if (/^[a-zA-Z ]+$/.test(t.value)||t.value=="") {
-    t.style.cssText="border-color:#46ea8d;";
-} else {
-    t.style.cssText="border-color:red;";
-    notifyMe(m,'red');
-}
+    let m="Use only letter "+t.value.charAt(t.value.length-1);
+    
+if (/^[a-zA-Z ]+$/.test(t.value.charAt(t.value.length-1))||t.value=="") {
    
-
-       
+} else {
+    notifyMe(m,'red');
     
-    
+     t.value=t.value.slice(0,t.value.length-1);
+}   
 }
+
+
+
 
 function advanceOpener(addvance){
     let detailDiv= addvance.previousElementSibling;
