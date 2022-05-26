@@ -1,17 +1,18 @@
 function getNotification(t){
     let m="Use only letter "+t.value;
 if (/^[a-zA-Z ]+$/.test(t.value)||t.value=="") {
-    t.style.cssText="border-color:#46ea8d;";
+    t.style.cssText="border-color:#b3b3b3;";
 } else {
     t.style.cssText="border-color:red;";
     notifyMe(m,'red');
+}   
 }
-   
 
-       
-    
-    
-}
+
+
+function focusOnInput(a) {
+    a.style.cssText="border-color:#46ea8d;";
+} 
 
 function advanceOpener(addvance){
     let detailDiv= addvance.previousElementSibling;
