@@ -1,10 +1,11 @@
 function getNotification(t){
-    let m="Use only letter "+t.value;
-if (/^[a-zA-Z ]+$/.test(t.value)||t.value=="") {
-    t.style.cssText="border-color:#b3b3b3;";
+    let m="Use only letter "+t.value.charAt(t.value.length-1);
+    
+if (/^[a-zA-Z ]+$/.test(t.value.charAt(t.value.length-1))||t.value=="") {
+   
 } else {
-    t.style.cssText="border-color:red;";
-    notifyMe(m,'red');
+    notifyMe(m,'red');  
+     t.value=t.value.slice(0,t.value.length-1);
 }   
 }
 
