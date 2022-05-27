@@ -1,7 +1,19 @@
 function getNotification(t){
-    let m="selected button is "+t.value;
-    notifyMe(m,'#46ae8d'); 
+    let m="Use only letter "+t.value.charAt(t.value.length-1);
+    
+if (/^[a-zA-Z ]+$/.test(t.value.charAt(t.value.length-1))||t.value=="") {
+   
+} else {
+    notifyMe(m,'red');  
+     t.value=t.value.slice(0,t.value.length-1);
+}   
 }
+
+
+
+function focusOnInput(a) {
+    a.style.cssText="border-color:#46ea8d;";
+} 
 
 function advanceOpener(addvance){
     let detailDiv= addvance.previousElementSibling;
@@ -14,7 +26,7 @@ function advanceOpener(addvance){
             if(i>=0&&i<addvance.children.length-1){
                 addvance.children[i].style="display:inline-block;";
             }
-            }
+        }
         setTimeout(function(){
             for(i=0;i<10;i++)
                 detailDiv.childNodes[1].style="display:none";
