@@ -14,7 +14,7 @@ function addElementPopup(btnType) {
                     `;
 }
 function closePopup(ele) {
-    ele.parentElement.parentElement.parentElement.style.display = 'none';
+    ele.parentElement.parentElement.parentElement.remove();
 }
 function getAdditionalContent(btnType) {
     switch (btnType) {
