@@ -24,8 +24,21 @@ function getAdditionalContent(btnType) {
                         <input class="themeInputBox" type="number" placeholder="min" >
                         <input class="themeInputBox" type="number" placeholder="max">
                     </div>
-                    <fieldset class="additionalContainer">
-
+                    <fieldset>
+                        <legend>Contains</legend>
+                        <div class="additionalContainer">
+                            <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
+                                <input type="checkbox">
+                                <h3>&#10004;</h3>
+                            </div>Alphabetes
+                            <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
+                                <input type="checkbox">
+                                <h3>&#10004;</h3>
+                            </div>Numbers
+                        </div>
+                        <div class="additionalContainer">
+                            radioboxes
+                        </div>
                     </fieldset>
                     `;
         case 'Radio':
