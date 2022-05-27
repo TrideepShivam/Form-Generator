@@ -4,14 +4,24 @@ function getNotification(t){
 if (/^[a-zA-Z ]+$/.test(t.value.charAt(t.value.length-1))||t.value=="") {
    
 } else {
+<<<<<<< HEAD
     notifyMe(m,'red');
     
+=======
+    notifyMe(m,'red');  
+>>>>>>> 77444e7fac4a56d25294de4845d87aff65548367
      t.value=t.value.slice(0,t.value.length-1);
 }   
 }
 
 
 
+<<<<<<< HEAD
+=======
+function focusOnInput(a) {
+    a.style.cssText="border-color:#46ea8d;";
+} 
+>>>>>>> 77444e7fac4a56d25294de4845d87aff65548367
 
 function advanceOpener(addvance){
     let detailDiv= addvance.previousElementSibling;
