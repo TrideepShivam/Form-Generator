@@ -28,11 +28,11 @@ function getAdditionalContent(btnType) {
                         <legend>Contains</legend>
                         <div class="additionalContainer">
                             <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
-                                <input type="checkbox">
+                                <input type="checkbox" name="constraint">
                                 <h3>&#10004;</h3>
                             </div>Alphabetes
                             <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
-                                <input type="checkbox">
+                                <input type="checkbox" name="constraint">
                                 <h3>&#10004;</h3>
                             </div>Numbers
                         </div>
@@ -42,7 +42,9 @@ function getAdditionalContent(btnType) {
                     </fieldset>
                     `;
         case 'Radio':
-            return getRadioContent();
+            return `
+                        
+                    `
         case 'Checkbox':
             return getCheckboxContent();
         case 'Range':
