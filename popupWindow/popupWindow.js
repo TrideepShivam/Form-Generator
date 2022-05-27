@@ -3,7 +3,7 @@ function addElementPopup(btnType) {
     main.setAttribute('class', 'popupContainer');
     document.body.appendChild(main);
     main.innerHTML = `<div class='popupWindow'>
-                        <h2>`+btnType+` </h2> 
+                        <h1>`+btnType+` </h1> 
                         <input class="themeInputBox" type="text" placeholder="Label">`
                         + getAdditionalContent(btnType) +
                         `<div>
@@ -20,10 +20,13 @@ function getAdditionalContent(btnType) {
     switch (btnType) {
         case 'Textbox':
             return `
-                    <div>
-                        <input class="themeInputBox" type="number" placeholder="min" style="">
+                    <div class="additionalContainer">
+                        <input class="themeInputBox" type="number" placeholder="min" >
                         <input class="themeInputBox" type="number" placeholder="max">
                     </div>
+                    <fieldset class="additionalContainer">
+
+                    </fieldset>
                     `;
         case 'Radio':
             return getRadioContent();
