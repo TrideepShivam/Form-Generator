@@ -22,7 +22,8 @@
 .popupWindow h1{margin:2px;}
 .popupWindow input{width:93%;color:black;}
 .additionalContainer{
-    width:100%;
+    width:93%;
+    margin:0px 3.5%;
     gap:10px;
     display:flex;
     justify-content:space-between;
