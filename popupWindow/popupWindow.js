@@ -22,34 +22,37 @@ function getAdditionalContent(btnType) {
                         <input class="themeInputBox" type="number" placeholder="min" >
                         <input class="themeInputBox" type="number" placeholder="max">
                     </div>
-                    <fieldset>
-                        <legend>Contains</legend>
                         <div class="additionalContainer">
-                            <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
-                                <input type="checkbox">
-                                <h3>&#10004;</h3>
-                            </div>Alphabetes
-                            <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
-                                <input type="checkbox">
-                                <h3>&#10004;</h3>
-                            </div>Numbers
+                            <div class="checkboxContainer">
+                                <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
+                                    <input type="checkbox">
+                                    <h3>&#10004;</h3>
+                                </div>Alphabetes
+                            </div>
+                            <div class="checkboxContainer">
+                                <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
+                                    <input type="checkbox">
+                                    <h3>&#10004;</h3>
+                                </div>Numbers
+                            </div>
+                            <div class="checkboxContainer">
+                                <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
+                                    <input type="checkbox" oninput="checkNextRadio(this.parentElement.nextElementSibling.firstChild)">
+                                    <h3>&#10004;</h3>   
+                                </div>spaces
+                            </div>
+                            <div class="checkboxContainer">
+                                <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
+                                    <input type="checkbox" oninput="checkNextRadio(this.parentElement.previousElementSibling.firstChild)">
+                                    <h3>&#10004;</h3>
+                                </div>Non-spaces
+                            </div>
                         </div>
-                        <div class="additionalContainer">
-                            <div class="outerCheckboxaajtak" onclick="checkNextRadio(this,this.nextElementSibling)">
-                                <input type="checkbox">
-                                <h3>&#10004;</h3>   
-                            </div>Spaces
-                            <div class="outerCheckboxaajtak" onclick="checkNextRadio(this,this.previousElementSibling)">
-                                <input type="checkbox">
-                                <h3>&#10004;</h3>
-                            </div>Non-Spaces
-                        </div>
-                    </fieldset>
                     `;
         case 'Radio':
             return `
                         
-                    `;
+                    `
         case 'Checkbox':
             return getCheckboxContent();
         case 'Range':
@@ -70,10 +73,9 @@ function getAdditionalContent(btnType) {
 
 
 
-function checkNextRadio(currentContainer,nextContainer){
-    outerCheckboxGlow(currentContainer)
-    if(nextContainer.children[0].checked){
-        outerCheckboxGlow(nextContainer);
+function checkNextRadio(ele){
+    if(ele.checked){
+        ele.checked=false;
     }
 }
 

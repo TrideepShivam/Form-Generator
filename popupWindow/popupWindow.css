@@ -10,7 +10,7 @@
 }
 .popupWindow{
     width:400px;
-    padding:5%;
+    padding:30px;
     background-color:#efefef;
     display:flex;
     flex-direction:column;
@@ -20,12 +20,19 @@
     border-radius:25px;
 }
 .popupWindow h1{margin:2px;}
-.popupWindow input{width:93%;color:black;}
+.popupWindow input{color:black;}
 .additionalContainer{
-    width:93%;
-    margin:0px 3.5%;
-    gap:10px;
+    width:82%;
+    padding:0px 3.5%;
+    gap:1%;
     display:flex;
     justify-content:space-between;
-    align-items: center;
+    flex-wrap:wrap;
+}
+.additionalContainer input{width:41%;}
+.additionalContainer .checkboxContainer{
+    width:150px;
+    display:flex;
+    align-items:center;
+    column-gap: 10px;
 }
