@@ -3,19 +3,17 @@ function addElementPopup(btnType) {
     main.setAttribute('class', 'popupContainer');
     document.body.appendChild(main);
     main.innerHTML = `<div class='popupWindow'>
-                        <h1>`+btnType+` </h1> 
+                        <h1>`+ btnType + ` </h1> 
                         <input class="themeInputBox" type="text" placeholder="Label">`
-                        + getAdditionalContent(btnType) +
-                        `<div>
+        + getAdditionalContent(btnType) +
+        `<div>
                             <button class='commonbtn' style="background:var(--themeColor);">Add</button>
                             <button class='commonbtn' style="background:transparent;" onclick='closePopup(this)'>Cancel</button>
                         </div>
                     </div>
                     `;
 }
-function closePopup(ele) {
-    ele.parentElement.parentElement.parentElement.remove();
-}
+
 function getAdditionalContent(btnType) {
     switch (btnType) {
         case 'Textbox':
@@ -28,16 +26,23 @@ function getAdditionalContent(btnType) {
                         <legend>Contains</legend>
                         <div class="additionalContainer">
                             <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
-                                <input type="checkbox" name="constraint">
+                                <input type="checkbox">
                                 <h3>&#10004;</h3>
                             </div>Alphabetes
                             <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
-                                <input type="checkbox" name="constraint">
+                                <input type="checkbox">
                                 <h3>&#10004;</h3>
                             </div>Numbers
                         </div>
                         <div class="additionalContainer">
-                            radioboxes
+                            <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
+                                <input type="checkbox" oninput="checkNextRadio(this.parentElement.nextElementSibling.firstChild)">
+                                <h3>&#10004;</h3>   
+                            </div>spaces
+                            <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
+                                <input type="checkbox" oninput="checkNextRadio(this.parentElement.previousElementSibling.firstChild)">
+                                <h3>&#10004;</h3>
+                            </div>Non-spaces
                         </div>
                     </fieldset>
                     `;
@@ -58,5 +63,20 @@ function getAdditionalContent(btnType) {
         default:
             return '<p>' + btnType + ' in process</p>';
     }
-  
+
 }
+
+
+
+
+
+function checkNextRadio(ele){
+    if(ele.checked){
+        ele.checked=false;
+    }
+}
+
+function closePopup(ele) {
+    ele.parentElement.parentElement.parentElement.remove();
+}
+
