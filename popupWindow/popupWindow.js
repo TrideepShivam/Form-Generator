@@ -22,47 +22,61 @@ function getAdditionalContent(btnType) {
                         <input class="themeInputBox" type="number" placeholder="min" >
                         <input class="themeInputBox" type="number" placeholder="max">
                     </div>
-                        <div class="additionalContainer">
-                            <div class="checkboxContainer">
-                                <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
-                                    <input type="checkbox">
-                                    <h3>&#10004;</h3>
-                                </div>Alphabetes
-                            </div>
-                            <div class="checkboxContainer">
-                                <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
-                                    <input type="checkbox">
-                                    <h3>&#10004;</h3>
-                                </div>Numbers
-                            </div>
-                            <div class="checkboxContainer">
-                                <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
-                                    <input type="checkbox" oninput="checkNextRadio(this.parentElement.nextElementSibling.firstChild)">
-                                    <h3>&#10004;</h3>   
-                                </div>spaces
-                            </div>
-                            <div class="checkboxContainer">
-                                <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
-                                    <input type="checkbox" oninput="checkNextRadio(this.parentElement.previousElementSibling.firstChild)">
-                                    <h3>&#10004;</h3>
-                                </div>Non-spaces
-                            </div>
-                        </div>
+                    <div class="additionalContainer">
+                       <div class="checkboxContainer">
+                           <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
+                               <input type="checkbox">
+                               <h3>&#10004;</h3>
+                           </div>Alphabetes
+                       </div>
+                       <div class="checkboxContainer">
+                           <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
+                               <input type="checkbox">
+                               <h3>&#10004;</h3>
+                           </div>Numbers
+                       </div>
+                       <div class="checkboxContainer">
+                           <div class="outerCheckboxaajtak" onclick="checkNextRadio(this,this.parentElement.nextElementSibling.children[0])">
+                               <input type="checkbox">
+                               <h3>&#10004;</h3>   
+                           </div>spaces
+                       </div>
+                       <div class="checkboxContainer">
+                           <div class="outerCheckboxaajtak" onclick="checkNextRadio(this,this.parentElement.previousElementSibling.children[0])">
+                               <input type="checkbox">
+                               <h3>&#10004;</h3>
+                           </div>Non-spaces
+                       </div>
+                   </div>
                     `;
         case 'Radio':
             return `
-                        
-                    `
+                    <input class="themeInputBox" type="number" placeholder="label1" >  
+                    <input class="themeInputBox" type="number" placeholder="label2" >  
+                    `;
         case 'Checkbox':
-            return getCheckboxContent();
+            return ``;
         case 'Range':
-            return getRangeContent();
+            return `
+                    <div class="additionalContainer">
+                        <input class="themeInputBox" type="number" placeholder="min value" >
+                        <input class="themeInputBox" type="number" placeholder="max value">
+                    </div>
+                    `;
         case 'Date':
-            return getDateContent();
+            return `
+                    <div class="additionalContainer">
+                        <input class="themeInputBox" type="number" placeholder="min date" >
+                        <input class="themeInputBox" type="number" placeholder="max date">
+                    </div>
+                    `;
         case 'Option':
-            return getOptionContent();
+            return `
+                    <input class="themeInputBox" type="number" placeholder="option1" >
+                    <input class="themeInputBox" type="number" placeholder="option2" >
+                    `;
         case 'Textarea':
-            return getTextareaContent();
+            return ``;
         default:
             return '<p>' + btnType + ' in process</p>';
     }
@@ -73,9 +87,10 @@ function getAdditionalContent(btnType) {
 
 
 
-function checkNextRadio(ele){
-    if(ele.checked){
-        ele.checked=false;
+function checkNextRadio(currentContainer,nextContainer){
+    outerCheckboxGlow(currentContainer)
+    if(nextContainer.children[0].checked){
+        outerCheckboxGlow(nextContainer);
     }
 }
 
