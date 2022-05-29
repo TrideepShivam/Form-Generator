@@ -21,15 +21,15 @@
 }
 .popupWindow h1{margin:2px;}
 .popupWindow input{color:black;}
+.popupWindow .btnContainer{margin:10px;}
 .additionalContainer{
-    width:82%;
-    padding:0px 3.5%;
-    gap:1%;
+    width:89%;
+    gap:10px;
     display:flex;
     justify-content:space-between;
     flex-wrap:wrap;
 }
-.additionalContainer input{width:41%;}
+.additionalContainer input{width:40%;}
 .additionalContainer .checkboxContainer{
     width:150px;
     display:flex;

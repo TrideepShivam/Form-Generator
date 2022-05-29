@@ -5,8 +5,8 @@ function addElementPopup(btnType) {
     main.innerHTML = `<div class='popupWindow'>
                         <h1>`+ btnType + ` </h1> 
                         <input class="themeInputBox" type="text" placeholder="Label">`
-        + getAdditionalContent(btnType) +
-        `<div>
+                        + getAdditionalContent(btnType) +
+                        `<div class="btnContainer">
                             <button class='commonbtn' style="background:var(--themeColor);">Add</button>
                             <button class='commonbtn' style="background:transparent;" onclick='closePopup(this)'>Cancel</button>
                         </div>
