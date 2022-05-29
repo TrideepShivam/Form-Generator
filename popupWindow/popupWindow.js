@@ -51,8 +51,8 @@ function getAdditionalContent(btnType) {
                     `;
         case 'Radio':
             return `
-                    <input class="themeInputBox" type="number" placeholder="label1" >  
-                    <input class="themeInputBox" type="number" placeholder="label2" >  
+                    <input class="themeInputBox" type="textbox" placeholder="label" onfocusout="getNext(this)">  
+                    <input class="themeInputBox" type="textbox" placeholder="label" disabled style="background:grey;">  
                     `;
         case 'Checkbox':
             return ``;
@@ -72,8 +72,8 @@ function getAdditionalContent(btnType) {
                     `;
         case 'Option':
             return `
-                    <input class="themeInputBox" type="number" placeholder="option1" >
-                    <input class="themeInputBox" type="number" placeholder="option2" >
+                    <input class="themeInputBox" type="number" placeholder="option" onfocusout="getNext(this)">
+                    <input class="themeInputBox" type="number" placeholder="option" disabled style="background:grey;">
                     `;
         case 'Textarea':
             return ``;
@@ -83,9 +83,27 @@ function getAdditionalContent(btnType) {
 
 }
 
+function getNext(t){
+    if(t.value!=""){
+        t.removeAttribute('onfocusout');
+        let nxt = t.nextElementSibling;
+        nxt.disabled=false;
+        nxt.style.background='transparent';
+        nxt.setAttribute('onfocusout','getNext(this)');
+        createNext(nxt,'label');
+    }
+    
+}
 
-
-
+function createNext(ele,placeholder='option'){
+    let container = ele.parentElement;
+    let newEle = document.createElement('input');
+    newEle.setAttribute('class','themeInputBox');
+    newEle.setAttribute('placeholder',placeholder);
+    newEle.disabled=true;
+    newEle.style.background="grey";
+    container.insertBefore(newEle,ele.nextElementSibling);
+}
 
 function checkNextRadio(currentContainer,nextContainer){
     outerCheckboxGlow(currentContainer)
