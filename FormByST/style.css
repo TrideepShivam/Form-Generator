@@ -227,6 +227,7 @@ input[type=number]::-webkit-inner-spin-button {
  letter-spacing: .08vw;
  transition: transform .2s;
  cursor: pointer;
+ border-radius: 9px;
 }
 #inputBody div:last-child{
    width:78%;  /* 65 */
@@ -244,7 +245,7 @@ input[type=number]::-webkit-inner-spin-button {
     border-radius: 0px 10px 10px 0px;
 }
 #themebtn{
-    border-radius: 9px;
+   
     margin-top: 1vw;
     width: 99%;
     background-color: transparent;
