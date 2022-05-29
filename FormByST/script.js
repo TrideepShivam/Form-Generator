@@ -1,14 +1,14 @@
 function getNotification(t){
     let m="Use only letter "+t.value.charAt(t.value.length-1);
-    
 if (/^[a-zA-Z ]+$/.test(t.value.charAt(t.value.length-1))||t.value=="") {
-   
 } else {
     notifyMe(m,'red');    
      t.value=t.value.slice(0,t.value.length-1);
 }   
 }
-
+function changeTextToDate(a){
+    a.type="date";
+}
 
 function advanceOpener(addvance){
     let detailDiv= addvance.previousElementSibling;
@@ -60,7 +60,9 @@ function elelistopener(mainwala){
          for(let i=0;i<ele.children.length;i++){
             ele.children[i].style.display="block";
              ele.children[i].addEventListener('click',function(){
-                elelistcloser(ele);});
+                elelistcloser(ele);
+                addElementPopup(this.innerHTML);
+            });
          }
          for(let j=0;j<=ele.children.length;j++){
             setTimeout(function(){
