@@ -52,7 +52,9 @@ function detailOpener(detailDiv){
                 },330);
                 
 }
-
+function forpopupopen(){
+    addElementPopup(this.innerHTML);
+}
 function elelistopener(mainwala){
     let ele=mainwala.nextElementSibling;
     if(ele.children[1].style.margin=="0.4vw"||ele.children[1].style.margin==""){
@@ -61,8 +63,10 @@ function elelistopener(mainwala){
             ele.children[i].style.display="block";
              ele.children[i].addEventListener('click',function(){
                 elelistcloser(ele);
-                addElementPopup(this.innerHTML);
             });
+         }
+         for(let l=0;l<ele.children.length;l++){
+         ele.children[l].addEventListener('click',forpopupopen);
          }
          for(let j=0;j<=ele.children.length;j++){
             setTimeout(function(){

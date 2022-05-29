@@ -62,7 +62,7 @@ body {
     border: 1px solid #212121;  
 }
 .themeInputBox{
-    height: 2.5vw;
+    height: 32px;  /*2.5vw*/
     width: 82%;
     border-radius: 15px;
     background: transparent;
