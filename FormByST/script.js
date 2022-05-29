@@ -52,11 +52,10 @@ function detailOpener(detailDiv){
                 },330);
                 
 }
-function forpopupopen(){
-    addElementPopup(this.innerHTML);
-}
-function elelistopener(mainwala){
-    let ele=mainwala.nextElementSibling;
+ function forPopupOpen() {addElementPopup(this.innerHTML);}
+
+function elelistopener(mainDiv){
+    let ele=mainDiv.nextElementSibling;
     if(ele.children[1].style.margin=="0.4vw"||ele.children[1].style.margin==""){
          ele.style.cssText="filter:opacity(1);height:auto;";
          for(let i=0;i<ele.children.length;i++){
@@ -66,7 +65,7 @@ function elelistopener(mainwala){
             });
          }
          for(let l=0;l<ele.children.length;l++){
-         ele.children[l].addEventListener('click',forpopupopen);
+         ele.children[l].addEventListener('click',forPopupOpen);
          }
          for(let j=0;j<=ele.children.length;j++){
             setTimeout(function(){

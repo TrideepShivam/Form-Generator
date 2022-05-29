@@ -184,6 +184,7 @@ input[type=number]::-webkit-inner-spin-button {
     background: #5c5c5c;
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 #elementList option:last-child {
     border-radius: 0vw 0vw 1vw 1vw;
