@@ -10,7 +10,8 @@
 }
 .popupWindow{
     width:400px;
-    padding:5%;
+    max-height:80%;
+    padding:40px;
     background-color:#efefef;
     display:flex;
     flex-direction:column;
@@ -18,14 +19,23 @@
     align-items: center;
     row-gap: 20px;
     border-radius:25px;
+    overflow-y:auto;
+    transition:all .2s;
 }
 .popupWindow h1{margin:2px;}
-.popupWindow input{width:93%;color:black;}
+.popupWindow input{color:black;}
+.popupWindow .btnContainer{margin:10px;}
 .additionalContainer{
-    width:93%;
-    margin:0px 3.5%;
+    width:89%;
     gap:10px;
     display:flex;
     justify-content:space-between;
-    align-items: center;
+    flex-wrap:wrap;
+}
+.additionalContainer input{width:40%;}
+.additionalContainer .checkboxContainer{
+    width:150px;
+    display:flex;
+    align-items:center;
+    column-gap: 10px;
 }
