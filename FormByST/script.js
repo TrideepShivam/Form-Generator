@@ -15,7 +15,7 @@ function advanceOpener(addvance){
         detailDiv.style.cssText="height:8%;top:2%;";
         detailDiv.children[detailDiv.children.length-1].style.cssText="display:block;filter:opacity(1);";
         addvance.children[addvance.children.length-1].style.cssText="display:none;filter:opacity(0);";
-        addvance.style.cssText="height:71.5%;border-color:transparent;background-color:transparent;";
+        addvance.style.cssText="height:71.5%;border-color:transparent;background-color:transparent;cursor:default;";
         for(i=0;i<detailDiv.children.length-1;i++){
             detailDiv.children[i].style="filter:opacity(0)";
             if(i>=0&&i<addvance.children.length-1){
@@ -65,6 +65,7 @@ function elelistopener(mainDiv){
             });
          }
          for(let l=0;l<ele.children.length;l++){
+             if(l!=4)
          ele.children[l].addEventListener('click',forPopupOpen);
          }
          for(let j=0;j<=ele.children.length;j++){
