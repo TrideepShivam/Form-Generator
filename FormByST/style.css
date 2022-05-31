@@ -163,7 +163,7 @@ input[type=number]::-webkit-inner-spin-button {
     border-radius: 0vw 0vw 1vw 1vw;
     filter: opacity(1);
     transition: filter .4s, height .4s;
-
+    z-index: 2;
 }
 #elementList option {
     height: 2vw;
@@ -179,6 +179,7 @@ input[type=number]::-webkit-inner-spin-button {
     letter-spacing: .06vw;
     display:none;
     transition: filter .3s, margin-top .3s;
+
 }
 #elementList option:hover {
     background: #5c5c5c;
@@ -261,13 +262,16 @@ input[type=number]::-webkit-inner-spin-button {
     margin:1%;
     border-radius: 4px;
     position: relative;
+    text-align: center;
+    font-family: var(--basicFont);
+    letter-spacing: .08vw;
 }
 #historyPanel div span{
     position: absolute;
-    right:0%;
-    height:100%;
-    width:40px;
-   border-left: 1px solid #474747;
+    right: 0%;
+    height: 100%;
+    width:13.6%;
+  
     text-align: center;
     border-radius: 0px 4px 4px 0px;
 }
