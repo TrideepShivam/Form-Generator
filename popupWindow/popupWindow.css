@@ -1,0 +1,41 @@
+.popupContainer{
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:rgba(0,0,0,.5);
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    z-index:10;
+}
+.popupWindow{
+    width:400px;
+    max-height:80%;
+    padding:40px;
+    background-color:#efefef;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    row-gap: 20px;
+    border-radius:25px;
+    overflow-y:auto;
+    transition:all .2s;
+}
+.popupWindow h1{margin:2px;}
+.popupWindow input{color:black;}
+.popupWindow .btnContainer{margin:10px;}
+.additionalContainer{
+    width:89%;
+    gap:10px;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+.additionalContainer input{width:40%;}
+.additionalContainer .checkboxContainer{
+    width:150px;
+    display:flex;
+    align-items:center;
+    column-gap: 10px;
+}

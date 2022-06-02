@@ -1,8 +1,9 @@
-0.theme design with help and documentation.(pending)
-1.mainform layout design(pending)
+0.theme design with help and documentation.(done)
+1.mainform layout design(done)
 2.add element modal popup (pending)
 3.theme color box.
-4.Notification box merging with body and recieves some text.
+4.Notification box merging with body and recieves some text.(done)
+5.create own calender style, color input.
 
 
 Functions:

@@ -5,6 +5,8 @@
 	<link rel='stylesheet' type='text/css' href='https://cdn.statically.io/gh/TrideepShivam/trideepshivam/main/cssCode/mainStyle.css'>
     <link rel="stylesheet" type="text/css" href="style.css">
 	<script src="script.js"></script>
+	<script src="../popupWindow/popupWindow.js"></script>
+	<link rel="stylesheet" type="text/css" href="../popupWindow/popupWindow.css">
 	<title>Form Generator</title>
 </head>
 <body>
@@ -12,22 +14,22 @@
 		<div id="inputBody">
 			<div id="detailBox">
 				<h2 id="heading">Form Generator</h2>
-				<input oninput="getNotification(this)" type="text" placeholder="Name">
-				<input type="number" placeholder="Contact" max="10">
-				<input type="text" placeholder="Event Name">
-				<input type="text" placeholder="Event detail">
+				<input class="themeInputBox"  oninput="getNotification(this)" type="text" placeholder="Name*">
+				<input class="themeInputBox" type="number" placeholder="Contact*" max="10">
+				<input class="themeInputBox" type="text" placeholder="Event Name*">
+				<input class="themeInputBox" type="text" placeholder="Event detail">
 				<div>
-					<input type="text" placeholder="From">
-					<input type="text" placeholder="To">
+					<input class="themeInputBox" type="text" placeholder="From*">
+					<input class="themeInputBox" type="text" onfocusin="changeTextToDate(this)" placeholder="To*">
 				</div>
 				<p onclick="detailOpener(this.parentNode)">move to main Box </p>	
 			</div>
 			<div id="advanceBox" onclick='advanceOpener(this)'>
-				<button id="taglistOpener" onclick="elelistopener()">Add Element</button>
+				<button id="taglistOpener" onclick="elelistopener(this)">Add Element</button>
 				<div id="elementList">
 					<option>Textbox</option>
 					<option>Radio</option>
-					<option>checkbox</option>
+					<option>Checkbox</option>
 					<option>Range</option>
 					<option>Email</option>
 					<option>Date</option>
@@ -35,17 +37,19 @@
 					<option>Textarea</option>
 				</div>
 					<label>History Log</label>
-				<div id="historyPanel"></div>
-					<button class="commonbtn" id="themebtn">Theme</button>
+				<div id="historyPanel">
+					
+				</div>
+					<button class="commonbtn" id="themebtn" onclick="addHistoryEle()">Theme</button>
 					<p>Addvance Edit</p>
 				</div>
-				<div>
+				<div id="okCancelDiv">
 					<button class="commonbtn" id="okbtn">Submit</button>
 					<button class="commonbtn" id="cancelbtn">Cancel</button>
 				</div>
-			</div>
-			<div id="outputBody">
-			</div>
+		</div>
+		<div id="outputBody">
+		</div>
 	</div>
 </body>
 </html>

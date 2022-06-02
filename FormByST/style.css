@@ -61,33 +61,34 @@ body {
     overflow: hidden;
     border: 1px solid #212121;  
 }
-#detailBox input {
-    height: 2.5vw;
+.themeInputBox{
+    height: 2.5vw;  /*2.5vw*/
     width: 82%;
-    margin: 4.5%;
     border-radius: 15px;
     background: transparent;
     outline: none;
     padding: 0px 3.5% 0px 3.5%;
-    color: #919191;
     color: white;
     font-size: 1.2vw;
     resize: none;
-   border: 1.5px solid #b3b3b3;
+    border: 1.5px solid #b3b3b3;
     transition: filter .4s;
     letter-spacing: .08vw;
 }
-#detailBox input::-ms-input-placeholder {
+#detailBox input {    
+    margin: 4.5%;    
+}
+.themeInputBox::-ms-input-placeholder {
     color:#b3b3b3;letter-spacing: 0.95vw;
   }
-  #detailBox input::placeholder{color:#b3b3b3;letter-spacing: .095vw;}
+.themeInputBox::placeholder{color:#b3b3b3;letter-spacing: .095vw;}
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-#detailBox input:focus {
+.themeInputBox:focus {
     border-color: rgb(70, 234, 141);
 }
 #detailBox p{
@@ -128,7 +129,7 @@ input::-webkit-inner-spin-button {
     overflow: hidden;
     border-radius: 12px;
     background-color: var(--themeColor);
-   
+    cursor: pointer;
 }
 #taglistOpener {
     height: 2.6vw;
@@ -162,7 +163,7 @@ input::-webkit-inner-spin-button {
     border-radius: 0vw 0vw 1vw 1vw;
     filter: opacity(1);
     transition: filter .4s, height .4s;
-
+    z-index: 2;
 }
 #elementList option {
     height: 2vw;
@@ -176,12 +177,15 @@ input::-webkit-inner-spin-button {
     filter: opacity(0);
     font-weight: lighter;
     letter-spacing: .06vw;
+    display:none;
     transition: filter .3s, margin-top .3s;
+
 }
 #elementList option:hover {
     background: #5c5c5c;
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 #elementList option:last-child {
     border-radius: 0vw 0vw 1vw 1vw;
@@ -217,30 +221,32 @@ input::-webkit-inner-spin-button {
 .commonbtn{
  height:2.7vw;
  width: 11.65vw; /* 9.7vw */
- border: none;
- background-color:#7e7c7c;
+ border: 1px solid #91e7d9;;
+ background-color:#b0b0b0;
  font-size: 1.15vw;
  font-family: var(--basicFont);
  letter-spacing: .08vw;
  transition: transform .2s;
  cursor: pointer;
+ border-radius: 9px;
 }
-#inputBody div:last-child{
+#okCancelDiv{
    width:78%;  /* 65 */
    display: flex;
    justify-content: space-between;
    position: absolute;
    bottom: 2.8vw;
 }
-#inputBody div:last-child button:hover{background-color: #5e5d5d;}
+#inputBody div:last-child button:hover{background-color: #91e7d9;}
 #okbtn{
     border-radius: 10px 0px 0px 10px;
+    background-color: #39beca;
 }
 #cancelbtn{
     border-radius: 0px 10px 10px 0px;
 }
 #themebtn{
-    border-radius: 9px;
+   
     margin-top: 1vw;
     width: 99%;
     background-color: transparent;
@@ -249,3 +255,36 @@ input::-webkit-inner-spin-button {
     transition: filter .4s;
     color: #838282;
 }
+#historyPanel div{
+    height:2.1vw;
+    width:95.6%;
+    background-color: #a6a6a6;
+    margin:1%;
+    border-radius: 4px;
+    position: relative;
+    padding: .25vw;
+}
+#historyPanel div p{
+    text-align: center;
+    font-family: var(--basicFont);
+    letter-spacing: .08vw;
+    font-size: 1.5vw;
+    margin: 0vw;
+    width:100%;
+}
+#historyPanel div span{
+    position: absolute;
+    right: 1%;
+    height: 80%;
+    width:13%;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 4px;
+    z-index: 2;
+}
+#historyPanel div span svg{
+    height: 55%;
+    width:55%;
+}
+#historyPanel div span:hover{background-color: #5c5c5c;}
+#historyPanel div span:hover svg{fill: #c9c9c9;}
