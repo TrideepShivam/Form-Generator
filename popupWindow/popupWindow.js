@@ -12,6 +12,11 @@ function addElementPopup(btnType) {
                         </div>
                     </div>
                     `;
+    document.getElementsByClassName('commonbtn')[0].addEventListener('click',sendElementDetail)
+}
+
+function sendElementDetail(){
+    var inputList = document.getElementsByTagName('input')
 }
 
 function getAdditionalContent(btnType) {
@@ -37,7 +42,7 @@ function getAdditionalContent(btnType) {
                        </div>
                        <div class="checkboxContainer">
                            <div class="outerCheckboxaajtak" onclick="checkNextRadio(this,this.parentElement.nextElementSibling.children[0])">
-                               <input type="checkbox">
+                               <input type="checkbox" >
                                <h3>&#10004;</h3>   
                            </div>spaces
                        </div>
