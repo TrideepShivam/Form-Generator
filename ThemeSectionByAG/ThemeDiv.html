@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Theme Section</title>
+    <script src='https://cdn.statically.io/gh/TrideepShivam/trideepshivam/main/jsCode/main.js'></script>
+	<link rel='stylesheet' type='text/css' href='https://cdn.statically.io/gh/TrideepShivam/trideepshivam/main/cssCode/mainStyle.css'>
+    <link rel="stylesheet" type="text/css" href="ThemeStyle.css">
+	<script src="ThemeScript.js"></script>
+    <style> 
+        .SelectTextBox {
+            display:flex;
+            flex-direction: column;
+            margin-top: 15px;
+            align-items: flex-start;
+            width:100%;
+            height: auto;
+            /* border:2px solid red; */
+            /* justify-content: center; */
+        }
+        .ElementContainer{
+            display:flex;
+            gap: 12px;
+            height: 40px;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 2px;
+        }
+        .ElementContainer input[type=radio] {
+            width: 30px;
+            height: 65px;
+            margin-left: 45px;
+        }
+        .ElementContainer input[type=radio]:hover {
+            width: 32px;
+            height: 67px;
+        }
+        .ElementContainer input[type=text] {}
+        .ElementContainer input[type=checkbox] {}
+        .ElementContainer input[type=range] {
+            width: 200px;   
+        }
+        .circleTextboxgk {
+            width: 190px;
+            padding: 5px 14px;
+        }
+        .singleLineButtominputboxgk {
+            height: 10px;
+            width: 205px;
+            margin-top: -8px;
+
+        }
+        .singleLineButtominputboxgk input{
+            padding: 10px 6px;
+
+        }
+        .txtcontainer {
+            height: 20px;
+            width: 205px;
+        }
+        
+        .topname{
+            transform: scale(1.2) translate(5px,10px);}
+    </style>
+</head>
+<body>
+    <button id="SelectThemeButton" onclick="this.nextElementSibling.style.height='80%'">Click Me</button>
+    <div id="ThemeSection">
+        <button id="closeMain" onclick="this.parentElement.style.height='0%'">&#10060;</button>
+        <h1>Textbox :</h1>
+        <div class="SelectTextBox">
+            <div class="ElementContainer">
+                <input type="radio" name="xyz" id="" checked>
+                <input type="textbox" placeholder="name" class="circleTextboxgk">
+            </div>
+            <div class="ElementContainer">
+                <input type="radio" name="xyz" id="">
+                <input type="textbox"  placeholder="name" class="outlineTextboxaajtak">
+            </div>
+            <div class="ElementContainer">
+                <input type="radio" name="xyz" id="">
+                <div class="singleLineButtominputboxgk"><input type="text"  placeholder="Textbox"></div>
+            </div>
+            <div class="ElementContainer">
+                <input type="radio" name="xyz" id="">
+                <fieldset class='txtcontainer'><legend class='topname'>your name</legend><input type='text' class='contactTxt' onfocusout='txtUnfocused(this)' onfocus='txtFocused(this)'></fieldset>
+            </div>
+            <div class="ElementContainer">
+                <input type="radio" name="xyz" id="">
+                <fieldset  class="labelTextboxaajtak"><label>your name</label><input type="text"></fieldset>
+            </div>
+        </div>
+
+        <h1>Checkbox :</h1>
+        <div class="SelectTextBox">
+            <div class="ElementContainer">
+                <input type="radio" name="xyz1" id="" checked>
+                <input class="switchCheckboxgk" type="checkbox" checked>
+                <input type="radio" name="xyz1" id="">
+                <div class="containerCircleCheckboxgk"><input type="checkbox" id="circle" checked><label for="circle"></label></div>
+            </div>
+            <div class="ElementContainer">
+                <input type="radio" name="xyz1" id="">
+                <div class="checkboxMiddleSection" onclick="checkboxWithSliderStyle(this,'your_color')"><input type="checkbox" class="checkboxStyleOne" checked><button class="checkboxSlider"></button></div>
+                <input type="radio" name="xyz1" id="">
+                <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)"><input type="checkbox" checked><h3>&#10004;</h3></div>
+            </div>
+
+        <h1>Range :</h1>
+        <div class="SelectTextBox">
+            <div class="ElementContainer">
+                <input type="radio" name="xyz2" id="" checked>
+                <div class="popuprange"><div>50</div><input type="range" max="222" min="0" oninput="popuprangeinput(this,max)" checked><div></div></div>
+            </div>
+            <div class="ElementContainer">
+                <input type="radio" name="xyz2" id="">
+                <div class="BoxRange" ><input type="range" max="250" min="0" oninput="boxWalaRange(this)" checked><div  title="Use arrow key for minor change">50</div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
