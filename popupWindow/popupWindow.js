@@ -7,16 +7,16 @@ function addElementPopup(btnType) {
                         <input class="themeInputBox" type="text" placeholder="Label">`
                         + getAdditionalContent(btnType) +
                         `<div class="btnContainer">
-                            <button class='commonbtn' style="background:var(--themeColor);">Add</button>
+                            <button class='commonbtn' onclick='sendElementDetail()' style="background:var(--themeColor);">Add</button>
                             <button class='commonbtn' style="background:transparent;" onclick='closePopup(this)'>Cancel</button>
                         </div>
                     </div>
                     `;
-    document.getElementsByClassName('commonbtn')[0].addEventListener('click',sendElementDetail)
 }
 
 function sendElementDetail(){
-    var inputList = document.getElementsByTagName('input')
+    let i = document.querySelectorAll(".popupContainer input");
+    alert(i[0].value+" "+i[1].value+" "+i[2].value);
 }
 
 function getAdditionalContent(btnType) {
