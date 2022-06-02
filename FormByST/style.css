@@ -163,7 +163,7 @@ input[type=number]::-webkit-inner-spin-button {
     border-radius: 0vw 0vw 1vw 1vw;
     filter: opacity(1);
     transition: filter .4s, height .4s;
-
+    z-index: 2;
 }
 #elementList option {
     height: 2vw;
@@ -179,6 +179,7 @@ input[type=number]::-webkit-inner-spin-button {
     letter-spacing: .06vw;
     display:none;
     transition: filter .3s, margin-top .3s;
+
 }
 #elementList option:hover {
     background: #5c5c5c;
@@ -255,21 +256,30 @@ input[type=number]::-webkit-inner-spin-button {
     color: #838282;
 }
 #historyPanel div{
-    height:2.3vw;
-    width:98%;
+    height:2.1vw;
+    width:95.6%;
     background-color: #a6a6a6;
     margin:1%;
     border-radius: 4px;
     position: relative;
+    text-align: center;
+    font-family: var(--basicFont);
+    letter-spacing: .08vw;
+    padding: .25vw;
 }
 #historyPanel div span{
     position: absolute;
-    right:0%;
-    height:100%;
-    width:40px;
-   border-left: 1px solid #474747;
+    right: 1%;
+    height: 80%;
+    width:13%;
+    cursor: pointer;
     text-align: center;
-    border-radius: 0px 4px 4px 0px;
+    border-radius: 4px;
+   
 }
-
+#historyPanel div span svg{
+    height: 55%;
+    width:55%;
+}
 #historyPanel div span:hover{background-color: #5c5c5c;}
+#historyPanel div span:hover svg{fill: #c9c9c9;}
