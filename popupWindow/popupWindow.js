@@ -15,8 +15,11 @@ function addElementPopup(btnType) {
 }
 
 function sendElementDetail(){
-    let i = document.querySelectorAll(".popupContainer input");
-    alert(i[0].value+" "+i[1].value+" "+i[2].value);
+    let newElement={};
+    const input = document.querySelectorAll(".popupContainer input");
+    for(let i=0;i<input.length;i++){
+        
+    }
 }
 
 function getAdditionalContent(btnType) {
@@ -24,31 +27,31 @@ function getAdditionalContent(btnType) {
         case 'Textbox':
             return `
                     <div class="additionalContainer">
-                        <input class="themeInputBox" type="number" placeholder="min" >
-                        <input class="themeInputBox" type="number" placeholder="max">
+                        <input class="themeInputBox" name="min" type="number" placeholder="min" >
+                        <input class="themeInputBox" name="max" type="number" placeholder="max">
                     </div>
                     <div class="additionalContainer">
                        <div class="checkboxContainer">
                            <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
-                               <input type="checkbox">
+                               <input name="alphabate" type="checkbox">
                                <h3>&#10004;</h3>
                            </div>Alphabetes
                        </div>
                        <div class="checkboxContainer">
                            <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)">
-                               <input type="checkbox">
+                               <input name="number" type="checkbox">
                                <h3>&#10004;</h3>
                            </div>Numbers
                        </div>
                        <div class="checkboxContainer">
                            <div class="outerCheckboxaajtak" onclick="checkNextRadio(this,this.parentElement.nextElementSibling.children[0])">
-                               <input type="checkbox" >
+                               <input name="space" type="checkbox" >
                                <h3>&#10004;</h3>   
                            </div>spaces
                        </div>
                        <div class="checkboxContainer">
                            <div class="outerCheckboxaajtak" onclick="checkNextRadio(this,this.parentElement.previousElementSibling.children[0])">
-                               <input type="checkbox">
+                               <input name="non_space" type="checkbox">
                                <h3>&#10004;</h3>
                            </div>Non-spaces
                        </div>
@@ -56,7 +59,7 @@ function getAdditionalContent(btnType) {
                     `;
         case 'Radio':
             return `
-                    <input class="themeInputBox" type="textbox" placeholder="label" onfocusout="getNext(this)">  
+                    <input class="themeInputBox" name="label" type="textbox" placeholder="label" onfocusout="getNext(this)">  
                     <input class="themeInputBox" type="textbox" placeholder="label" disabled style="background:grey;">  
                     `;
         case 'Checkbox':
