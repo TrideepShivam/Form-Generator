@@ -262,10 +262,15 @@ input[type=number]::-webkit-inner-spin-button {
     margin:1%;
     border-radius: 4px;
     position: relative;
+    padding: .25vw;
+}
+#historyPanel div p{
     text-align: center;
     font-family: var(--basicFont);
     letter-spacing: .08vw;
-    padding: .25vw;
+    font-size: 1.5vw;
+    margin: 0vw;
+    width:100%;
 }
 #historyPanel div span{
     position: absolute;
@@ -275,7 +280,7 @@ input[type=number]::-webkit-inner-spin-button {
     cursor: pointer;
     text-align: center;
     border-radius: 4px;
-   
+    z-index: 2;
 }
 #historyPanel div span svg{
     height: 55%;
