@@ -270,16 +270,16 @@ input[type=number]::-webkit-inner-spin-button {
 #historyPanel div span{
     position: absolute;
     right: 1%;
-    height: 80%;
-    width:13%;
+    height: 55%;
+    width:9%;
     cursor: pointer;
     text-align: center;
     border-radius: 4px;
-   
+   padding:1.5%;
 }
 #historyPanel div span svg{
-    height: 55%;
-    width:55%;
+    height: 81%;
+    width:81%;
 }
 #historyPanel div span:hover{background-color: #5c5c5c;}
 #historyPanel div span:hover svg{fill: #c9c9c9;}
