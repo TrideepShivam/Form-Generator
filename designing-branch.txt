@@ -4,7 +4,7 @@
 3.theme color box.
 4.Notification box merging with body and recieves some text.(done)
 5.create own calender style, color input.
-
+6.create function which return last number of "string".
 
 Functions:
 	1. theme design:

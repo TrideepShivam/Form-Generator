@@ -125,6 +125,7 @@ function addHistoryEle(eleDetail={input:'radio',max:20,min:10,label:'firstname'}
     divele.appendChild(deleteSpan);
     count=updateNumEle.updigit(eleDetail.input);
     labels=document.createTextNode(eleDetail.input+'-'+count);
+    eleDetail.id=eleDetail.input+'-'+count;
     paragrph=document.createElement('p');
     paragrph.appendChild(labels);
     divele.appendChild(paragrph);
@@ -132,6 +133,13 @@ function addHistoryEle(eleDetail={input:'radio',max:20,min:10,label:'firstname'}
     inputObj.push(eleDetail);
 }
 function delHistoryEle(parentDiv){
-    alert(parentDiv.children[1].innerHTML);
-    parentDiv.remove();
+   
+    let names=parentDiv.children[1].innerHTML;
+    for(let i=inputObj.length;i>0;i--){
+        if(inputObj[i-1].id==names.slice(0,names.length))
+        {
+        parentDiv.remove();
+        }
+    }
+    alert(inputObj.length);
 }
