@@ -132,19 +132,21 @@ function addHistoryEle(eleDetail={input:'radio',max:20,min:10,label:'firstname'}
     historydiv.appendChild(divele);
     inputObj.push(eleDetail);
 }
-function delHistoryEle(parentDiv){
+function delHistoryEle(parentDiv){ /* div in which "inputname" and delete icon situtated */
    
     let names=parentDiv.children[1].innerHTML;
     for(let i=inputObj.length;i>0;i--){
         if(inputObj[i-1].id==names.slice(0,names.length))
         {
+
         parentDiv.remove();
+
         }
     }
     alert(inputObj.length);
 }
 
-function intSelecter(str){
+function intSelector(str){
     let a=str;
     let len=a.length;
     if(!(isNaN(parseInt(a))))
