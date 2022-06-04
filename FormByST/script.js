@@ -154,7 +154,7 @@ function intSelecter(){
     {
         for( let i=len;i>=0;i--)
         {
-            if(isNaN(parseInt(a.slice(i-1,len))))
+            if(isNaN(parseInt(a.slice(i-1,i))))
             {
                 alert(parseInt(a.slice(i,len)));
                 break;
