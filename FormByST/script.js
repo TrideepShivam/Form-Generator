@@ -147,15 +147,18 @@ function delHistoryEle(parentDiv){
 function intSelecter(){
     let a=prompt("string");
     len=a.length;
-    for( let i=len;i>=0;i--)
+    if(!(isNaN(parseInt(a)))){
+        alert(parseInt(a));
+    }
+    else 
     {
-        if(isNaN(parseInt(a.slice(i-1,len))))
+        for( let i=len;i>=0;i--)
         {
-            alert(parseInt(a.slice(i,len)));
-            break;
-        }
-        else if(i==0&&!(isNaN(parseInt(a.slice(0,i+1))))){
-            alert(parseInt(a.slice(0,len)));
+            if(isNaN(parseInt(a.slice(i-1,len))))
+            {
+                alert(parseInt(a.slice(i,len)));
+                break;
+            }
         }
     }
 }
