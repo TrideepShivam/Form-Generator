@@ -115,7 +115,7 @@ const updateNumEle={
 };
 const inputObj=[];
 
-function addHistoryEle(eleDetail={input:'textbox',max:20,min:10,label:'firstname'}){
+function addHistoryEle(eleDetail={input:'range',max:20,min:10,label:'firstname'}){
     let count=0;
     let historydiv=document.getElementById('historyPanel');
     let divele=document.createElement('div');
