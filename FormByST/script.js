@@ -115,7 +115,7 @@ const updateNumEle={
 };
 const inputObj=[];
 
-function addHistoryEle(eleDetail={input:'textbox',max:20,min:10,label:'firstname'}){
+function addHistoryEle(eleDetail){
     let count=0;
     let historydiv=document.getElementById('historyPanel');
     let divele=document.createElement('div');
@@ -153,7 +153,7 @@ function showInOutput(allDetail){
     dynEle=document.createElement('input');
     dynEle.setAttribute('type',allDetail.input);
     dynEle.setAttribute('id',allDetail.id);
-    dynEle.setAttribute('placeholder',allDetail.label);
+    dynEle.setAttribute('placeholder',allDetail.main_label);
     outputDiv.appendChild(dynEle);
     return dynEle; /* return the current created ele so that we can add this ele to their detailed object */
 }
@@ -166,7 +166,7 @@ function intSelector(str){
 
     else if(isNaN(parseInt(a.slice(len-1,len)))) return(0);
 
-    else {
+    else{
             for( let i=len;i>=0;i--)
             {
                 if(isNaN(parseInt(a.slice(i-1,i))))
