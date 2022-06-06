@@ -115,7 +115,7 @@ const updateNumEle={
 };
 const inputObj=[];
 
-function addHistoryEle(eleDetail={input:'radio',max:20,min:10,label:'firstname'}){
+function addHistoryEle(eleDetail={input:'textbox',max:20,min:10,label:'firstname'}){
     let count=0;
     let historydiv=document.getElementById('historyPanel');
     let divele=document.createElement('div');
@@ -131,19 +131,31 @@ function addHistoryEle(eleDetail={input:'radio',max:20,min:10,label:'firstname'}
     divele.appendChild(paragrph);
     historydiv.appendChild(divele);
     inputObj.push(eleDetail);
+    let displayedEle=showInOutput(eleDetail);
+    eleDetail.outputedEle=displayedEle;
 }
 function delHistoryEle(parentDiv){ /* div in which "inputname" and delete icon situtated */
-   
+    
     let names=parentDiv.children[1].innerHTML;
-    for(let i=inputObj.length;i>0;i--){
-        if(inputObj[i-1].id==names.slice(0,names.length))
-        {
-
-        parentDiv.remove();
-
+        for(let i=inputObj.length;i>0;i--){
+            if(inputObj[i-1].id==names.slice(0,names.length))
+            {
+                inputObj[i-1].outputedEle.remove();
+                inputObj.splice(i-1,1);
+                parentDiv.remove();
+                break;
+            }
         }
-    }
-    alert(inputObj.length);
+}
+
+function showInOutput(allDetail){
+    let outputDiv=document.getElementById('outputBody');
+    dynEle=document.createElement('input');
+    dynEle.setAttribute('type',allDetail.input);
+    dynEle.setAttribute('id',allDetail.id);
+    dynEle.setAttribute('placeholder',allDetail.label);
+    outputDiv.appendChild(dynEle);
+    return dynEle; /* return the current created ele so that we can add this ele to their detailed object */
 }
 
 function intSelector(str){
