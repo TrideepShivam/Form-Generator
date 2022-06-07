@@ -113,16 +113,16 @@ function deleteinput(){
 }
 
 const updateNumEle={
-    textbox:0,radio:0,range:0,
+    text:0,radio:0,range:0,
     updigit:function(a){
         switch (a) {
-        case 'textbox':
-            this.textbox+=1;
-             return this.textbox; 
-        case 'radio': 
+        case 'Text':
+            this.text+=1;
+             return this.text; 
+        case 'Radio': 
         this.radio+=1;
              return this.radio; 
-         case 'range': 
+         case 'Range': 
          this.range+=1;
               return this.range;
         default:
