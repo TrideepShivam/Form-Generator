@@ -130,6 +130,8 @@ function addHistoryEle(eleDetail){
     paragrph.appendChild(labels);
     divele.appendChild(paragrph);
     historydiv.appendChild(divele);
+    pos=historydiv.scrollHeight-historydiv.clientHeight;
+    historydiv.scrollTop=pos;
     inputObj.push(eleDetail);
     let displayedEle=showInOutput(eleDetail);
     eleDetail.outputedEle=displayedEle;
@@ -174,3 +176,4 @@ function intSelector(str){
             }
         }
 }
+
