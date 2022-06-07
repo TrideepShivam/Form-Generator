@@ -7,30 +7,32 @@ function addElementPopup(btnType) {
                         <input class="themeInputBox" name="main_label" type="text" placeholder="Label">`
                         + getAdditionalContent(btnType) +
                         `<div class="btnContainer">
-                            <button class='commonbtn' onclick='sendElementDetail()' style="background:var(--themeColor);">Add</button>
+                            <button class='commonbtn' onclick='sendElementDetail(this,"`+ btnType +`")' style="background:var(--themeColor);">Add</button>
                             <button class='commonbtn' style="background:transparent;" onclick='closePopup(this)'>Cancel</button>
                         </div>
                     </div>
                     `;
 }
 
-function sendElementDetail(){
-    let newElement={};
+function sendElementDetail(t,popupElementType){
+    let newElement={};   
+    newElement['input']=popupElementType;
     const input = document.querySelectorAll(".popupContainer input");
     for(let i=0;i<input.length;i++){
-        let ele=input[i]
+        let ele=input[i];
         if(ele.type=="text"||ele.type=="number"){
             newElement[ele.name]=ele.value;
         }else if(ele.type=="checkbox"||ele.type=="radio"){
             newElement[ele.name]=ele.checked;
         }
     }
-    addHistoryEle(newElement);
+    closePopup(t);
+    addHistoryEle(newElement);    
 }
 
 function getAdditionalContent(btnType) {
     switch (btnType) {
-        case 'Textbox':
+        case 'Text':
             return `
                     <div class="additionalContainer">
                         <input class="themeInputBox" name="min" type="number" placeholder="min" >

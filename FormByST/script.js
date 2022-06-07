@@ -96,16 +96,16 @@ function deleteinput(){
     delHistoryEle(this.parentElement);
 }
 const updateNumEle={
-    textbox:0,radio:0,range:0,
+    text:0,radio:0,range:0,
     updigit:function(a){
         switch (a) {
-        case 'textbox':
-            this.textbox+=1;
-             return this.textbox; 
-        case 'radio': 
+        case 'Text':
+            this.text+=1;
+             return this.text; 
+        case 'Radio': 
         this.radio+=1;
              return this.radio; 
-         case 'range': 
+         case 'Range': 
          this.range+=1;
               return this.range;
         default:
@@ -115,7 +115,7 @@ const updateNumEle={
 };
 const inputObj=[];
 
-function addHistoryEle(eleDetail={input:'range',max:20,min:10,label:'firstname'}){
+function addHistoryEle(eleDetail){
     let count=0;
     let historydiv=document.getElementById('historyPanel');
     let divele=document.createElement('div');
