@@ -130,6 +130,8 @@ function addHistoryEle(eleDetail){
     paragrph.appendChild(labels);
     divele.appendChild(paragrph);
     historydiv.appendChild(divele);
+    pos=historydiv.scrollHeight-historydiv.clientHeight;
+    historydiv.scrollTop=pos;
     inputObj.push(eleDetail);
     let displayedEle=showInOutput(eleDetail);
     eleDetail.outputedEle=displayedEle;
@@ -153,7 +155,7 @@ function showInOutput(allDetail){
     dynEle=document.createElement('input');
     dynEle.setAttribute('type',allDetail.input);
     dynEle.setAttribute('id',allDetail.id);
-    dynEle.setAttribute('placeholder',allDetail.label);
+    dynEle.setAttribute('placeholder',allDetail.main_label);
     outputDiv.appendChild(dynEle);
     return dynEle; /* return the current created ele so that we can add this ele to their detailed object */
 }
@@ -166,7 +168,7 @@ function intSelector(str){
 
     else if(isNaN(parseInt(a.slice(len-1,len)))) return(0);
 
-    else {
+    else{
             for( let i=len;i>=0;i--)
             {
                 if(isNaN(parseInt(a.slice(i-1,i))))
@@ -174,3 +176,4 @@ function intSelector(str){
             }
         }
 }
+
