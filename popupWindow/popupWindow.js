@@ -4,7 +4,7 @@ function addElementPopup(btnType) {
     document.body.appendChild(main);
     main.innerHTML = `<div class='popupWindow'>
                         <h1>`+ btnType + ` </h1> 
-                        <input class="themeInputBox" type="text" placeholder="Label">`
+                        <input class="themeInputBox" name="main_label" type="text" placeholder="Label">`
                         + getAdditionalContent(btnType) +
                         `<div class="btnContainer">
                             <button class='commonbtn' onclick='sendElementDetail()' style="background:var(--themeColor);">Add</button>
@@ -18,8 +18,14 @@ function sendElementDetail(){
     let newElement={};
     const input = document.querySelectorAll(".popupContainer input");
     for(let i=0;i<input.length;i++){
-        
+        let ele=input[i]
+        if(ele.type=="text"||ele.type=="number"){
+            newElement[ele.name]=ele.value;
+        }else if(ele.type=="checkbox"||ele.type=="radio"){
+            newElement[ele.name]=ele.checked;
+        }
     }
+    addHistoryEle(newElement);
 }
 
 function getAdditionalContent(btnType) {
