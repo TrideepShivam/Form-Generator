@@ -115,7 +115,7 @@ const updateNumEle={
 };
 const inputObj=[];
 
-function addHistoryEle(eleDetail={input:'range',max:20,min:10,label:'firstname'}){
+function addHistoryEle(eleDetail={input:'textbox',max:20,min:10,label:'firstname'}){
     let count=0;
     let historydiv=document.getElementById('historyPanel');
     let divele=document.createElement('div');
@@ -130,6 +130,8 @@ function addHistoryEle(eleDetail={input:'range',max:20,min:10,label:'firstname'}
     paragrph.appendChild(labels);
     divele.appendChild(paragrph);
     historydiv.appendChild(divele);
+    pos=historydiv.scrollHeight-historydiv.clientHeight;
+    historydiv.scrollTop=pos;
     inputObj.push(eleDetail);
     let displayedEle=showInOutput(eleDetail);
     eleDetail.outputedEle=displayedEle;
@@ -174,3 +176,4 @@ function intSelector(str){
             }
         }
 }
+
