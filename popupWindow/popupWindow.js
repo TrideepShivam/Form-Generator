@@ -67,8 +67,8 @@ function getAdditionalContent(btnType) {
                     `;
         case 'Radio':
             return `
-                    <input class="themeInputBox" name="label" type="textbox" placeholder="label" onfocusout="getNext(this)">  
-                    <input class="themeInputBox" type="textbox" placeholder="label" disabled style="background:grey;">  
+                    <input class="themeInputBox" name="label1" type="textbox" placeholder="label1" onfocusout="getNext(this)">  
+                    <input class="themeInputBox" name="label2" type="textbox" placeholder="label2" disabled style="background:grey;">  
                     `;
         case 'Checkbox':
             return ``;
@@ -82,14 +82,14 @@ function getAdditionalContent(btnType) {
         case 'Date':
             return `
                     <div class="additionalContainer">
-                        <input class="themeInputBox" type="number" placeholder="min date" >
-                        <input class="themeInputBox" type="number" placeholder="max date">
+                        <input class="themeInputBox" type="date" placeholder="min date" >
+                        <input class="themeInputBox" type="date" placeholder="max date">
                     </div>
                     `;
         case 'Option':
             return `
-                    <input class="themeInputBox" type="number" placeholder="option" onfocusout="getNext(this)">
-                    <input class="themeInputBox" type="number" placeholder="option" disabled style="background:grey;">
+                    <input class="themeInputBox" name="option1" type="text" placeholder="option1" onfocusout="getNext(this)">
+                    <input class="themeInputBox" name="option2" type="text" placeholder="option2" disabled style="background:grey;">
                     `;
         case 'Textarea':
             return ``;
@@ -106,16 +106,24 @@ function getNext(t){
         nxt.disabled=false;
         nxt.style.background='transparent';
         nxt.setAttribute('onfocusout','getNext(this)');
-        createNext(nxt,'label');
+        createNext(nxt);
     }
     
 }
 
-function createNext(ele,placeholder='option'){
+function createNext(ele){
     let container = ele.parentElement;
+    let placeholderAndName;
+    let txt = ele.name;
+    if(txt[0]=='o'){
+        placeholderAndName='option'+(intSelector(txt)+1);
+    }else{
+        placeholderAndName='label'+(intSelector(txt)+1);
+    }
     let newEle = document.createElement('input');
     newEle.setAttribute('class','themeInputBox');
-    newEle.setAttribute('placeholder',placeholder);
+    newEle.setAttribute('placeholder',placeholderAndName);
+    newEle.setAttribute('name',placeholderAndName);
     newEle.disabled=true;
     newEle.style.background="grey";
     container.insertBefore(newEle,ele.nextElementSibling);
