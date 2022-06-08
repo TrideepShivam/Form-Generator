@@ -61,7 +61,7 @@ function detailOpener(detailDiv){
 
  function forPopupOpen() {addElementPopup(this.innerHTML);}
 function outputForEmail(){ 
-    let objEmail={input:'email'};
+    let objEmail={input:'Email'};
     addHistoryEle(objEmail);
 }
 
@@ -113,7 +113,7 @@ function deleteinput(){
 }
 
 const updateNumEle={
-    text:0,radio:0,range:0,
+    text:0,radio:0,range:0,email:0,date:0,select:0,checkbox:0,textarea:0,
     updigit:function(a){
         switch (a) {
         case 'Text':
@@ -125,6 +125,21 @@ const updateNumEle={
          case 'Range': 
          this.range+=1;
               return this.range;
+        case 'Email':
+            this.email+=1;
+            return this.email;
+        case 'Date':
+            this.date+=1;
+            return this.date;
+        case 'Select':
+            this.select+=1;
+            return this.select;
+        case 'Checkbox':
+            this.checkbox+=1;
+            return this.checkbox;
+        case 'Textarea':
+            this.textarea+=1;
+            return this.textarea;
         default:
             break;
         }
@@ -170,14 +185,36 @@ function delHistoryEle(parentDiv){ /* div in which "inputname" and delete icon s
         }
 }
 
+function elementCreater(objs){
+    let createdEle;
+    let whenParent;
+    let forlabels;
+    if(objs.input=='Textarea'||objs.input=='Option'){
+        createdEle=document.createElement(objs.input);
+    } else{
+        createdEle=document.createElement('input');
+        if (objs.input=='Text'||objs.input=='Email') {
+            createdEle.setAttribute('placeholder',objs.main_label);
+            createdEle.setAttribute('type',objs.input);
+        }else{
+           createdEle.setAttribute('type',objs.input);
+           whenParent= document.createElement('div');
+           whenParent.appendChild(createdEle);
+           forlabels=document.createElement('label');
+           forlabels.innerHTML=objs.main_label;
+           whenParent.appendChild(forlabels);
+           return whenParent;
+        }
+    }
+    return createdEle;
+}
 function showInOutput(allDetail){
+    alert(JSON.stringify(allDetail));
     let outputDiv=document.getElementById('outputBody');
-    dynEle=document.createElement('input');
-    dynEle.setAttribute('type',allDetail.input);
-    dynEle.setAttribute('id',allDetail.id);
-    dynEle.setAttribute('placeholder',allDetail.id);
-    outputDiv.appendChild(dynEle);
-    return dynEle; /* return the current created ele so that we can add this ele to their detailed object */
+    let dynamicElement= elementCreater(allDetail);
+    dynamicElement.setAttribute('id',allDetail.id);
+    outputDiv.appendChild(dynamicElement);
+    return dynamicElement; /* return the current created ele so that we can add this ele to their detailed object */
 }
 
 function intSelector(str){
