@@ -61,7 +61,7 @@ function detailOpener(detailDiv){
 
  function forPopupOpen() {addElementPopup(this.innerHTML);}
 function outputForEmail(){ 
-    let objEmail={input:'Email'};
+    let objEmail={main_label:'Email',input:'Email'};
     addHistoryEle(objEmail);
 }
 
@@ -189,28 +189,40 @@ function elementCreater(objs){
     let createdEle;
     let whenParent;
     let forlabels;
-    if(objs.input=='Textarea'||objs.input=='Option'){
-        createdEle=document.createElement(objs.input);
-    } else{
-        createdEle=document.createElement('input');
-        if (objs.input=='Text'||objs.input=='Email') {
+        if (objs.input=='Text'||objs.input=='Email'||objs.input=='Textarea') {
+            createdEle=document.createElement(objs.setInputTag());
             createdEle.setAttribute('placeholder',objs.main_label);
             createdEle.setAttribute('type',objs.input);
-        }else{
-           createdEle.setAttribute('type',objs.input);
-           whenParent= document.createElement('div');
-           whenParent.appendChild(createdEle);
-           forlabels=document.createElement('label');
-           forlabels.innerHTML=objs.main_label;
-           whenParent.appendChild(forlabels);
-           return whenParent;
         }
-    }
+        else{
+            whenParent= document.createElement('div');
+            if (objs.input=='Radio'||objs.input=='Option') {
+                    
+            }
+            else{
+            createdEle=document.createElement(objs.setInputTag());
+            createdEle.setAttribute('type',objs.input);
+            forlabels=document.createElement('label');
+            forlabels.setAttribute('class','inputLabel');
+            forlabels.innerHTML=objs.main_label;
+            whenParent.appendChild(forlabels);
+            whenParent.appendChild(createdEle);
+            }
+            return whenParent;
+        }
+    
     return createdEle;
 }
 function showInOutput(allDetail){
     alert(JSON.stringify(allDetail));
     let outputDiv=document.getElementById('outputBody');
+    allDetail.setInputTag=function(){
+        if (this.input=='Textarea'||this.input=='Option') {
+                return this.input;
+        } else {
+            return 'input';
+        }
+    }
     let dynamicElement= elementCreater(allDetail);
     dynamicElement.setAttribute('id',allDetail.id);
     outputDiv.appendChild(dynamicElement);
