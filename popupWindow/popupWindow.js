@@ -20,7 +20,7 @@ function sendElementDetail(t,popupElementType){
     const input = document.querySelectorAll(".popupContainer input");
     for(let i=0;i<input.length;i++){
         let ele=input[i];
-        if(ele.type=="text"||ele.type=="number"){
+        if(ele.type=="text"||ele.type=="number"||ele.type=="date"||ele.type=="range"){
             newElement[ele.name]=ele.value;
         }else if(ele.type=="checkbox"||ele.type=="radio"){
             newElement[ele.name]=ele.checked;
