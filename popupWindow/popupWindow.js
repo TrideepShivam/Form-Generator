@@ -76,7 +76,7 @@ function getAdditionalContent(btnType) {
             return `
                     <div class="additionalContainer">
                         <input class="themeInputBox" name="min" type="number" placeholder="min value" >
-                        <input class="themeInputBox" mame="max" type="number" placeholder="max value">
+                        <input class="themeInputBox" name="max" type="number" placeholder="max value">
                     </div>
                     `;
         case 'Date':
