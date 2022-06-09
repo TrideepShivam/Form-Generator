@@ -7,75 +7,26 @@
     <link rel="stylesheet" type="text/css" href="ThemeStyle.css">
 	<script src="ThemeScript.js"></script>
     <style> 
-        .SelectTextBox {
-            display:flex;
-            flex-direction: column;
-            margin-top: 15px;
-            align-items: flex-start;
-            width:100%;
-            height: auto;
-            /* border:2px solid red; */
-            /* justify-content: center; */
+        .switchCheckboxgk {
+            height: 30px;
+            width: 60px;
         }
-        .ElementContainer{
-            display:flex;
-            gap: 12px;
-            height: 40px;
-            align-items: center;
-            justify-content: space-around;
-            margin-bottom: 2px;
-        }
-        .ElementContainer input[type=radio] {
+        .switchCheckboxgk:before{
             width: 30px;
-            height: 65px;
-            margin-left: 45px;
+            height: 30px;
         }
-        .ElementContainer input[type=radio]:hover {
-           transform: scale(1.1);
+        .switchCheckboxgk:checked:before{ left: 30px; }
+        .checkboxMiddleSection {
+            width:55px;
+	        height:27px;
         }
-       
-        .ElementContainer input[type=range] {
-            width: 200px;   
+        .SelectTextBox input[type=radio]{ margin-left: 35px ;}
+        .containerCircleCheckboxgk {
+            margin-left: 4px;
+            margin-bottom: 0px;    
         }
-        .circleTextboxgk {
-            width: 190px;
-            padding: 5px 14px;
-        }
-        .singleLineButtominputboxgk {
-            height: 10px;
-            width: 205px;
-            margin-top: -8px;
+        
 
-        }
-        .singleLineButtominputboxgk input{
-            padding: 10px 6px;
-            background-color: transparent;
-          border-bottom-color: rgb(58, 58, 58);
-        }
-        .txtcontainer {
-            height: auto;
-            width: 210px;
-            padding: 0px 0px 1px 4px;
-        }
-        .contactTxt{font-size: 18px; background-color: transparent;}
-        .topname{ transform: scale(1.2) translate(10%,80%); }
-        .labelTextboxaajtak {
-            width: 205px;
-            margin: 0px;
-            padding-left: 3px;
-        }
-        .labelTextboxaajtak input {
-            width: 205px;
-            height: 15px;
-            border-top-width: 20px;
-            margin: 0px;
-        }
-        .labelTextboxaajtak label {
-            width: 205px;
-            top: 18px;
-            left: 6px;
-            
-        }
     </style>
 </head>
 <body>
@@ -120,6 +71,7 @@
                 <input type="radio" name="xyz1" id="">
                 <div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)"><input type="checkbox" checked><h3>&#10004;</h3></div>
             </div>
+        </div>
 
         <h1>Range :</h1>
         <div class="SelectTextBox">
