@@ -184,35 +184,68 @@ function delHistoryEle(parentDiv){ /* div in which "inputname" and delete icon s
             }
         }
 }
+function storyOfRadioOption(parentele,firstChild, ...allRest)
+{
+    let papa=document.createElement(parentele);
+    let child=document.createElement(firstChild);
+    papa.appendChild(child);
+    for(const rest of allRest)
+    {
+        let firstPart=''; 
+        let lastPart;
+        if(intSelector(rest)!=0)                                      /*this if section is to check string for attribute */
+        {
+            for(i=0;rest.charAt(i)!='+';i++)                         /* this (for) is for cut the attribute property part from string , because we all add + in the middle of string*/
+            {
+                    firstPart+=rest.charAt(i);
+            }
+            lastPart=rest.slice(i+1,rest.length-1);                 /* this is cutting of last part that is attribute value */
+             child.setAttribute(String(firstPart),String(lastPart)); 
+            
+        }
+        else                                                         /* if string is not attribute then it must element string */
+        {
+            child=document.createElement(rest);
+            papa.appendChild(child);
+        } 
+    }
+    return papa;
+}
 
-function elementCreater(objs){
+function elementCreater(objs)
+{
     let createdEle;
-    let whenParent;
-    let forlabels;
-        if (objs.input=='Text'||objs.input=='Email'||objs.input=='Textarea') {
+        if (objs.input=='Text'||objs.input=='Email'||objs.input=='Textarea')
+        {
             createdEle=document.createElement(objs.setInputTag());
             createdEle.setAttribute('placeholder',objs.main_label);
             createdEle.setAttribute('type',objs.input);
         }
-        else{
-            whenParent= document.createElement('div');
-            if (objs.input=='Radio'||objs.input=='Option') {
-                    
-            }
-            else{
-            createdEle=document.createElement(objs.setInputTag());
-            createdEle.setAttribute('type',objs.input);
-            forlabels=document.createElement('label');
-            forlabels.setAttribute('class','inputLabel');
-            forlabels.innerHTML=objs.main_label;
-            whenParent.appendChild(forlabels);
-            whenParent.appendChild(createdEle);
-            }
-            return whenParent;
+        else if(objs.input=='Radio'||objs.input=='Option')
+        {
+            createdEle= document.createElement('div');
+            let keyss = Object.keys(objs);
+            let m=2;
+            do {
+                if(objs[keyss[m]]!='')
+                {
+                    let labelChild=storyOfRadioOption();
+                    let papa=storyOfRadioOption('div',objs.setInputTag(),'type+radio1','name+'+objs.main_label+'1','label','class+inputLabel1');
+                    papa.lastElementChild.innerHTML=objs[keyss[m]];
+                    createdEle.appendChild(papa);
+                }
+                m++;
+            } while (intSelector(keyss[m])!=0);
+        }
+        else
+        {
+            createdEle= storyOfRadioOption('div',objs.setInputTag(),'type+'+objs.input+'1','label','class+inputLabel1');
+            createdEle.lastElementChild.innerHTML=objs.main_label;
         }
     
     return createdEle;
 }
+
 function showInOutput(allDetail){
     alert(JSON.stringify(allDetail));
     let outputDiv=document.getElementById('outputBody');
