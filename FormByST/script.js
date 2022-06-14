@@ -184,9 +184,9 @@ function delHistoryEle(parentDiv){ /* div in which "inputname" and delete icon s
             }
         }
 }
-function storyOfRadioOption(allRest, papa)
+function storyOfRadioOption(allRest, parent)
 {
-    papa= document.createElement(papa);
+    papa= document.createElement(parent);
     let child;
     let count=0;
     for(let rest in allRest)
@@ -219,19 +219,25 @@ function elementCreater(objs)
          do {
              if(objs[keyss[m]]!='')
              {
-                 let papa=storyOfRadioOption(ob={element1:objs.setInputTag(),type1:objs.input,name1:objs.main_label,element2:'label',class2:'inputLabel'},'div');
-                 papa.lastElementChild.innerHTML=objs[keyss[m]];
-                 createdEle.appendChild(papa);
+                let papa=storyOfRadioOption(ob={element1:objs.setInputTag(),type1:objs.input,name1:objs.main_label,element2:'label',class2:'inputLabel'},'div');
+                papa.lastElementChild.innerHTML=objs[keyss[m]];
+                createdEle.appendChild(papa);
              }
              m++;
          } while (intSelector(keyss[m])!=0);
          return createdEle;
      }
-     else if(objs.input=='Range'||objs.input=='Date'||objs.input=='checkbox')
+     else if(objs.input=='Date')
      {
-          createdEle= storyOfRadioOption(ob={element1:objs.setInputTag(), type1:objs.input,min1:objs.min_date, max1:objs.max_date,class1:'lineTextBoxaajtak',element2:'label', class2:'inputLabel'},'div');
-          createdEle.lastElementChild.innerHTML=objs.main_label;
-          return createdEle;
+        createdEle= storyOfRadioOption(ob={element1:objs.setInputTag(), type1:objs.input,min1:objs.min_date, max1:objs.max_date,class1:'lineTextBoxaajtak',element2:'label', class2:'inputLabel'},'div');
+        createdEle.lastElementChild.innerHTML=objs.main_label;
+        return createdEle;
+     }
+     else if(objs.input=='Range'||objs.input=='Checkbox')
+     {
+        createdEle= storyOfRadioOption(ob={element1:objs.setInputTag(), type1:objs.input,min1:objs.min_date, max1:objs.max_date,element2:'label', class2:'inputLabel'},'div');
+        createdEle.lastElementChild.innerHTML=objs.main_label;
+        return createdEle;
      }
 }
 
