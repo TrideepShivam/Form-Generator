@@ -201,7 +201,6 @@ function storyOfRadioOption(parentele,firstChild, ...allRest)
             }
             lastPart=rest.slice(i+1,rest.length-1);                 /* this is cutting of last part that is attribute value */
              child.setAttribute(String(firstPart),String(lastPart)); 
-            
         }
         else                                                         /* if string is not attribute then it must element string */
         {
@@ -229,14 +228,13 @@ function elementCreater(objs)
             do {
                 if(objs[keyss[m]]!='')
                 {
-                    let labelChild=storyOfRadioOption();
                     let papa=storyOfRadioOption('div',objs.setInputTag(),'type+radio1','name+'+objs.main_label+'1','label','class+inputLabel1');
                     papa.lastElementChild.innerHTML=objs[keyss[m]];
                     createdEle.appendChild(papa);
                 }
                 m++;
             } while (intSelector(keyss[m])!=0);
-        }
+        } 
         else
         {
             createdEle= storyOfRadioOption('div',objs.setInputTag(),'type+'+objs.input+'1','label','class+inputLabel1');
@@ -246,7 +244,8 @@ function elementCreater(objs)
     return createdEle;
 }
 
-function showInOutput(allDetail){
+function showInOutput(allDetail)
+{
     alert(JSON.stringify(allDetail));
     let outputDiv=document.getElementById('outputBody');
     allDetail.setInputTag=function(){
@@ -262,7 +261,8 @@ function showInOutput(allDetail){
     return dynamicElement; /* return the current created ele so that we can add this ele to their detailed object */
 }
 
-function intSelector(str){
+function intSelector(str)
+{
     let a=str;
     let len=a.length;
     if(!(isNaN(parseInt(a))))
