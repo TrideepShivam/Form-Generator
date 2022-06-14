@@ -184,30 +184,21 @@ function delHistoryEle(parentDiv){ /* div in which "inputname" and delete icon s
             }
         }
 }
-function storyOfRadioOption(parentele,firstChild, ...allRest)
+function storyOfRadioOption(allRest, papa)
 {
-    let papa=document.createElement(parentele);
-    let child=document.createElement(firstChild);
-    papa.appendChild(child);
-    for(const rest of allRest)
+    papa= document.createElement(papa);
+    let child;
+    let count=0;
+    for(let rest in allRest)
     {
-        let firstPart=''; 
-        let lastPart;
-        if(intSelector(rest)!=0)                                      /*this if section is to check string for attribute */
+        if(parseInt(intSelector(rest))!=count)                                      /*this if section is to check string for attribute */
         {
-            for(i=0;rest.charAt(i)!='+';i++)                         /* this (for) is for cut the attribute property part from string , because we all add + in the middle of string*/
-            {
-                    firstPart+=rest.charAt(i);
-            }
-            lastPart=rest.slice(i+1,rest.length-1);                 /* this is cutting of last part that is attribute value */
-             child.setAttribute(String(firstPart),String(lastPart)); 
-            
+            child=document.createElement(allRest[rest]);
+            papa.appendChild(child); 
+            count=parseInt(intSelector(rest));  
         }
-        else                                                         /* if string is not attribute then it must element string */
-        {
-            child=document.createElement(rest);
-            papa.appendChild(child);
-        } 
+        else                                                       /* if string is not attribute then it must element string */
+            child.setAttribute(String(rest.slice(0,rest.length-1)),String(allRest[rest]));  
     }
     return papa;
 }
@@ -215,35 +206,33 @@ function storyOfRadioOption(parentele,firstChild, ...allRest)
 function elementCreater(objs)
 {
     let createdEle;
-        if (objs.input=='Text'||objs.input=='Email'||objs.input=='Textarea')
-        {
-            createdEle=document.createElement(objs.setInputTag());
-            createdEle.setAttribute('placeholder',objs.main_label);
-            createdEle.setAttribute('type',objs.input);
-        }
-        else if(objs.input=='Radio'||objs.input=='Option')
-        {
-            createdEle= document.createElement('div');
-            let keyss = Object.keys(objs);
-            let m=2;
-            do {
-                if(objs[keyss[m]]!='')
-                {
-                    let labelChild=storyOfRadioOption();
-                    let papa=storyOfRadioOption('div',objs.setInputTag(),'type+radio1','name+'+objs.main_label+'1','label','class+inputLabel1');
-                    papa.lastElementChild.innerHTML=objs[keyss[m]];
-                    createdEle.appendChild(papa);
-                }
-                m++;
-            } while (intSelector(keyss[m])!=0);
-        }
-        else
-        {
-            createdEle= storyOfRadioOption('div',objs.setInputTag(),'type+'+objs.input+'1','label','class+inputLabel1');
-            createdEle.lastElementChild.innerHTML=objs.main_label;
-        }
-    
-    return createdEle;
+    if(objs.input=='Text'||objs.input=='Email'||objs.input=='Textarea')
+    {
+         createdEle=storyOfRadioOption( ob={element1:objs.setInputTag(),placeholder1:objs.main_label,type1:objs.input,class1:'lineTextBoxaajtak'},'div').children[0];
+         return createdEle;
+    }
+    else if(objs.input=='Radio'||objs.input=='Option')
+    {
+         createdEle= document.createElement('div');
+         let keyss = Object.keys(objs);
+         let m=2;
+         do {
+             if(objs[keyss[m]]!='')
+             {
+                 let papa=storyOfRadioOption(ob={element1:objs.setInputTag(),type1:objs.input,name1:objs.main_label,element2:'label',class2:'inputLabel'},'div');
+                 papa.lastElementChild.innerHTML=objs[keyss[m]];
+                 createdEle.appendChild(papa);
+             }
+             m++;
+         } while (intSelector(keyss[m])!=0);
+         return createdEle;
+     }
+     else if(objs.input=='Range'||objs.input=='Date'||objs.input=='checkbox')
+     {
+          createdEle= storyOfRadioOption(ob={element1:objs.setInputTag(), type1:objs.input,min1:objs.min_date, max1:objs.max_date,class1:'lineTextBoxaajtak',element2:'label', class2:'inputLabel'},'div');
+          createdEle.lastElementChild.innerHTML=objs.main_label;
+          return createdEle;
+     }
 }
 
 function showInOutput(allDetail){

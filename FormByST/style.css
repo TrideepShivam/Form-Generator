@@ -41,6 +41,8 @@ body {
     border-radius:0px 20px 20px 0px;
     border:.1vw solid rgb(70, 234, 141);
     border-left-width: 0px;
+   
+   
 }
 #heading{
     color:#efefef;
@@ -294,3 +296,17 @@ input[type=number]::-webkit-inner-spin-button {
     color: #a6a6a6;
     margin: 0px;
 }
+.lineTextBoxaajtak{
+    font-size:17px;
+    font-family: var(--basicFont);
+    color: rgb(231, 231, 231);
+    width: 170px;
+    height:20px;
+    text-align:center;
+    outline:none;
+    border:2px solid #a6a6a6;
+    border-width:0px 0px 1.7px 0px;
+    padding:2px 5px 1px 5px ;
+    background:transparent;
+}
+.lineTextBoxaajtak:focus{border-width:0px 0px 2.1px 0px;}
