@@ -187,6 +187,7 @@ function delHistoryEle(parentDiv){ /* div in which "inputname" and delete icon s
 function storyOfRadioOption(allRest, parent)
 {
     papa= document.createElement(parent);
+    papa.setAttribute('class','basicBox');
     let child;
     let count=0;
     for(let rest in allRest)
@@ -225,6 +226,7 @@ function elementCreater(objs)
              }
              m++;
          } while (intSelector(keyss[m])!=0);
+         createdEle.setAttribute('class','basicBoxForRadOpt');
          return createdEle;
      }
      else if(objs.input=='Date')
