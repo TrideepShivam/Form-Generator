@@ -184,10 +184,9 @@ function delHistoryEle(parentDiv){ /* div in which "inputname" and delete icon s
             }
         }
 }
-function storyOfRadioOption(allRest, parent)
+function storyOfRadioOption(allRest, papa)
 {
-    papa= document.createElement(parent);
-    papa.setAttribute('class','basicBox');
+    papa= document.createElement(papa);
     let child;
     let count=0;
     for(let rest in allRest)
@@ -220,31 +219,23 @@ function elementCreater(objs)
          do {
              if(objs[keyss[m]]!='')
              {
-                let papa=storyOfRadioOption(ob={element1:objs.setInputTag(),type1:objs.input,name1:objs.main_label,element2:'label',class2:'inputLabel'},'div');
-                papa.lastElementChild.innerHTML=objs[keyss[m]];
-                createdEle.appendChild(papa);
+                 let papa=storyOfRadioOption(ob={element1:objs.setInputTag(),type1:objs.input,name1:objs.main_label,element2:'label',class2:'inputLabel'},'div');
+                 papa.lastElementChild.innerHTML=objs[keyss[m]];
+                 createdEle.appendChild(papa);
              }
              m++;
          } while (intSelector(keyss[m])!=0);
-         createdEle.setAttribute('class','basicBoxForRadOpt');
          return createdEle;
      }
-     else if(objs.input=='Date')
+     else if(objs.input=='Range'||objs.input=='Date'||objs.input=='checkbox')
      {
-        createdEle= storyOfRadioOption(ob={element1:objs.setInputTag(), type1:objs.input,min1:objs.min_date, max1:objs.max_date,class1:'lineTextBoxaajtak',element2:'label', class2:'inputLabel'},'div');
-        createdEle.lastElementChild.innerHTML=objs.main_label;
-        return createdEle;
-     }
-     else if(objs.input=='Range'||objs.input=='Checkbox')
-     {
-        createdEle= storyOfRadioOption(ob={element1:objs.setInputTag(), type1:objs.input,min1:objs.min_date, max1:objs.max_date,element2:'label', class2:'inputLabel'},'div');
-        createdEle.lastElementChild.innerHTML=objs.main_label;
-        return createdEle;
+          createdEle= storyOfRadioOption(ob={element1:objs.setInputTag(), type1:objs.input,min1:objs.min_date, max1:objs.max_date,class1:'lineTextBoxaajtak',element2:'label', class2:'inputLabel'},'div');
+          createdEle.lastElementChild.innerHTML=objs.main_label;
+          return createdEle;
      }
 }
 
-function showInOutput(allDetail)
-{
+function showInOutput(allDetail){
     alert(JSON.stringify(allDetail));
     let outputDiv=document.getElementById('outputBody');
     allDetail.setInputTag=function(){
@@ -260,8 +251,7 @@ function showInOutput(allDetail)
     return dynamicElement; /* return the current created ele so that we can add this ele to their detailed object */
 }
 
-function intSelector(str)
-{
+function intSelector(str){
     let a=str;
     let len=a.length;
     if(!(isNaN(parseInt(a))))
@@ -276,5 +266,25 @@ function intSelector(str)
                     return(parseInt(a.slice(i,len)));
             }
         }
+}
+
+const allStyleObj={
+    txtcontainer:{for:'text',htmlCode:"<fieldset class='txtcontainer'><legend class='topname'>[your text which will be displayed as placeholder]</legend><input type='text' class='contactTxt' onfocusout='txtUnfocused(this)' onfocus='txtFocused(this)'></fieldset>"},
+    outerCheckboxaajtak:{for:'checkbox',htmlCode:" <div class='outerCheckboxaajtak' onclick='outerCheckboxGlow(this)'><input type='checkbox'><h3>&#10004;</h3></div>"},
+    checkboxMiddleSection:{for:'checkbox',htmlCode:"<div class='checkboxMiddleSection' onclick='checkboxWithSliderStyle(this,'your_color')'><input type='checkbox' class='checkboxStyleOne'><button class='checkboxSlider'></button></div>"},
+    trafficOuter:{for:'checkbox',htmlCode:"<div class='trafficOuter' onclick='getTrafficLight(this)' title='red=disagree,green=agree'><div ></div><div ></div><input type='checkbox'></div>"},
+    popuprange:{for:'range',htmlCode:"<div class='popuprange'><div>50</div><input type='range' max='222' min='0' oninput='popuprangeinput(this,max)'><div></div></div>"},
+    BoxRange:{for:'range',htmlCode:"<div class='BoxRange' ><input type='range' max='250' min='0' oninput='boxWalaRange(this)'><div  title='Use arrow key for minor change'>50</div>	</div>"},
+    labelTextboxaajtak:{for:'text',htmlCode:"<fieldset  class='labelTextboxaajtak'><label>'your Label'</label><input type='text'></fieldset>"},
+    containerCircleCheckboxgk:{for:'checkbox',htmlCode:"<div class='containerCircleCheckboxgk'><input type='checkbox' id='circle'><label for='circle'></label></div>"},
+    switchCheckboxgk:{for:'checkbox',htmlCode:"<input class='switchCheckboxgk' type='checkbox'>"},
+    singleLineButtominputboxgk:{for:'text',htmlCode:"<div class='singleLineButtominputboxgk'><input type='text'  placeholder='Textbox'></div>"},
+    outlineTextboxaajtak:{for:'text',htmlCode:"<input type='textbox' placeholder='name' class='outlineTextboxaajtak'>"},
+    circleTextboxgk:{for:'text',htmlCode:"<input type='textbox' placeholder='name' class='circleTextboxgk'>"},
+    roundedTextboxFavBorder:{for:'text',htmlCode:"<input type='textbox' placeholder='name' class='roundedTextboxFavBorder'>"}
+};
+
+function setStyle(classname){
+    let displayScreen=document.getElementById('outputBody');
 }
 
