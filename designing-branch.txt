@@ -1,10 +1,11 @@
 0.theme design with help and documentation.(done)
 1.mainform layout design(done)
-2.add element modal popup (pending)
-3.theme color box.
+2.add element modal popup (done)
+3.theme color box.(pending)
 4.Notification box merging with body and recieves some text.(done)
-5.create own calender style, color input.
-6.create function which return last number of "string".
+5.create own calender style, color input.(pending)
+6.create function which return last number of "string".(done)
+7.create a loding page from js merged with body and have two function. a.laoding()b.closeLoading().
 
 Functions:
 	1. theme design:
