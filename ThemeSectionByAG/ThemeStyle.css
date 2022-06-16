@@ -28,7 +28,7 @@ body {
 #ThemeSection {
     position: absolute;
     left: 200px;
-    top: 100px;
+    bottom: 100px;
     width: 335px;
     height: 0px;
     background: lightgray;
@@ -75,13 +75,10 @@ h1 {
     width: 30px;
     height: 65px;
     margin-left: 45px;
+    cursor: pointer;
 }
 .ElementContainer input[type=radio]:hover {
    transform: scale(1.1);
-}
-
-.ElementContainer input[type=range] {
-    width: 200px;   
 }
 .circleTextboxgk {
     width: 190px;
@@ -104,7 +101,7 @@ h1 {
     padding: 0px 0px 1px 4px;
 }
 .contactTxt{font-size: 18px; background-color: transparent;}
-.topname{ transform: scale(1.2) translate(10%,80%); }
+.topname{ transform: scale(1.1) translate(5px,15px); }
 .labelTextboxaajtak {
     width: 205px;
     margin: 0px;
