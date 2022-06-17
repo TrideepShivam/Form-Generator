@@ -277,22 +277,40 @@ function intSelector(str){
 }
 
 const allStyleObj={
-    txtcontainer:{for:'text',htmlCode:"<fieldset class='txtcontainer'><legend class='topname'>[your text which will be displayed as placeholder]</legend><input type='text' class='contactTxt' onfocusout='txtUnfocused(this)' onfocus='txtFocused(this)'></fieldset>"},
-    outerCheckboxaajtak:{for:'checkbox',htmlCode:" <div class='outerCheckboxaajtak' onclick='outerCheckboxGlow(this)'><input type='checkbox'><h3>&#10004;</h3></div>"},
-    checkboxMiddleSection:{for:'checkbox',htmlCode:"<div class='checkboxMiddleSection' onclick='checkboxWithSliderStyle(this,'your_color')'><input type='checkbox' class='checkboxStyleOne'><button class='checkboxSlider'></button></div>"},
-    trafficOuter:{for:'checkbox',htmlCode:"<div class='trafficOuter' onclick='getTrafficLight(this)' title='red=disagree,green=agree'><div ></div><div ></div><input type='checkbox'></div>"},
-    popuprange:{for:'range',htmlCode:"<div class='popuprange'><div>50</div><input type='range' max='222' min='0' oninput='popuprangeinput(this,max)'><div></div></div>"},
-    BoxRange:{for:'range',htmlCode:"<div class='BoxRange' ><input type='range' max='250' min='0' oninput='boxWalaRange(this)'><div  title='Use arrow key for minor change'>50</div>	</div>"},
-    labelTextboxaajtak:{for:'text',htmlCode:"<fieldset  class='labelTextboxaajtak'><label>'your Label'</label><input type='text'></fieldset>"},
-    containerCircleCheckboxgk:{for:'checkbox',htmlCode:"<div class='containerCircleCheckboxgk'><input type='checkbox' id='circle'><label for='circle'></label></div>"},
-    switchCheckboxgk:{for:'checkbox',htmlCode:"<input class='switchCheckboxgk' type='checkbox'>"},
-    singleLineButtominputboxgk:{for:'text',htmlCode:"<div class='singleLineButtominputboxgk'><input type='text'  placeholder='Textbox'></div>"},
-    outlineTextboxaajtak:{for:'text',htmlCode:"<input type='textbox' placeholder='name' class='outlineTextboxaajtak'>"},
-    circleTextboxgk:{for:'text',htmlCode:"<input type='textbox' placeholder='name' class='circleTextboxgk'>"},
-    roundedTextboxFavBorder:{for:'text',htmlCode:"<input type='textbox' placeholder='name' class='roundedTextboxFavBorder'>"}
+    txtcontainer:{for:'Text',htmlCode:"<fieldset class='txtcontainer'><legend class='topname'>[your text which will be displayed as placeholder]</legend><input type='text' class='contactTxt' onfocusout='txtUnfocused(this)' onfocus='txtFocused(this)'></fieldset>"},
+    outerCheckboxaajtak:{for:'Checkbox',htmlCode:" <div class='outerCheckboxaajtak' onclick='outerCheckboxGlow(this)'><input type='checkbox'><h3>&#10004;</h3></div>"},
+    checkboxMiddleSection:{for:'Checkbox',htmlCode:`<div class='checkboxMiddleSection' onclick='checkboxWithSliderStyle(this,'your_color')'><input type='checkbox' class='checkboxStyleOne'><button class='checkboxSlider'></button></div>`},
+    trafficOuter:{for:'Checkbox',htmlCode:"<div class='trafficOuter' onclick='getTrafficLight(this)' title='red=disagree,green=agree'><div ></div><div ></div><input type='checkbox'></div>"},
+    popuprange:{for:'Range',htmlCode:"<div class='popuprange'><div>50</div><input type='range' max='222' min='0' oninput='popuprangeinput(this,max)'><div></div></div>"},
+    BoxRange:{for:'Range',htmlCode:"<div class='BoxRange' ><input type='range' max='250' min='0' oninput='boxWalaRange(this)'><div  title='Use arrow key for minor change'>50</div>	</div>"},
+    labelTextboxaajtak:{for:'Text',htmlCode:"<fieldset  class='labelTextboxaajtak'><label>'your Label'</label><input type='text'></fieldset>"},
+    containerCircleCheckboxgk:{for:'Checkbox',htmlCode:"<div class='containerCircleCheckboxgk'><input type='checkbox' id='circle'><label for='circle'></label></div>"},
+    switchCheckboxgk:{for:'Checkbox',htmlCode:"<input class='switchCheckboxgk' type='checkbox'>"},
+    singleLineButtominputboxgk:{for:'Text',htmlCode:"<div class='singleLineButtominputboxgk'><input type='text'  placeholder='Textbox'></div>"},
+    outlineTextboxaajtak:{for:'Text',htmlCode:"<input type='textbox' placeholder='name' class='outlineTextboxaajtak'>"},
+    circleTextboxgk:{for:'Text',htmlCode:"<input type='textbox' placeholder='name' class='circleTextboxgk'>"},
+    roundedTextboxFavBorder:{for:'Text',htmlCode:"<input type='textbox' placeholder='name' class='roundedTextboxFavBorder'>"}
 };
+function replaceElement(a,b){
+    alert(b);
+    let containerele=document.createElement("span");
+    containerele.innerHTML=b;
+    let parents=document.getElementById(a).parentNode;
+    parents.replaceChildren(containerele,document.getElementById(a));
+}
 
 function setStyle(classname){
-    let displayScreen=document.getElementById('outputBody');
+   
+    let styleObjType=allStyleObj[classname].for;
+    
+    for(let k=0;k<inputObj.length;k++)
+    {
+        if(inputObj[k].input==styleObjType)
+            {
+                
+                let objId=inputObj[k].id;
+                replaceElement(objId,allStyleObj[classname].htmlCode);
+            }
+    }
 }
 
