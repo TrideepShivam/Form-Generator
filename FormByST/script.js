@@ -209,7 +209,7 @@ function elementCreater(objs)
     let createdEle;
     if(objs.input=='Text'||objs.input=='Email'||objs.input=='Textarea')
     {
-         createdEle=storyOfRadioOption( ob={element1:objs.setInputTag(),placeholder1:objs.main_label,type1:objs.input,class1:'lineTextBoxaajtak'},'div').children[0];
+         createdEle=storyOfRadioOption( ob={element1:objs.setInputTag(),placeholder1:objs.main_label,type1:objs.input,class1:'lineTextBoxaajtak'},'div');
          return createdEle;
     }
     else if(objs.input=='Radio'||objs.input=='Option')
@@ -292,22 +292,18 @@ const allStyleObj={
     roundedTextboxFavBorder:{for:'Text',htmlCode:"<input type='textbox' placeholder='name' class='roundedTextboxFavBorder'>"}
 };
 function replaceElement(a,b){
-    alert(b);
-    let containerele=document.createElement("span");
-    containerele.innerHTML=b;
-    let parents=document.getElementById(a).parentNode;
-    parents.replaceChildren(containerele,document.getElementById(a));
+    let removeable= document.getElementById(a);
+    let lastele= removeable.children[1];
+    removeable.innerHTML=b;
+    removeable.appendChild(lastele);
 }
 
 function setStyle(classname){
-   
     let styleObjType=allStyleObj[classname].for;
-    
     for(let k=0;k<inputObj.length;k++)
     {
         if(inputObj[k].input==styleObjType)
             {
-                
                 let objId=inputObj[k].id;
                 replaceElement(objId,allStyleObj[classname].htmlCode);
             }
