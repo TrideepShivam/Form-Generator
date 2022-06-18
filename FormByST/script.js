@@ -278,13 +278,13 @@ function intSelector(str){
 
 const allStyleObj={
     txtcontainer:{for:'Text',htmlCode:"<fieldset class='txtcontainer'><legend class='topname'>[your text which will be displayed as placeholder]</legend><input type='text' class='contactTxt' onfocusout='txtUnfocused(this)' onfocus='txtFocused(this)'></fieldset>"},
-    outerCheckboxaajtak:{for:'Checkbox',htmlCode:" <div class='outerCheckboxaajtak' onclick='outerCheckboxGlow(this)'><input type='checkbox'><h3>&#10004;</h3></div>"},
+    outerCheckboxaajtak:{for:'Radio',htmlCode:" <div class='outerCheckboxaajtak' onclick='outerCheckboxGlow(this)'><input type='checkbox'><h3>&#10004;</h3></div>"},
     checkboxMiddleSection:{for:'Checkbox',htmlCode:`<div class='checkboxMiddleSection' onclick='checkboxWithSliderStyle(this,'your_color')'><input type='checkbox' class='checkboxStyleOne'><button class='checkboxSlider'></button></div>`},
     trafficOuter:{for:'Checkbox',htmlCode:"<div class='trafficOuter' onclick='getTrafficLight(this)' title='red=disagree,green=agree'><div ></div><div ></div><input type='checkbox'></div>"},
     popuprange:{for:'Range',htmlCode:"<div class='popuprange'><div>50</div><input type='range' max='222' min='0' oninput='popuprangeinput(this,max)'><div></div></div>"},
     BoxRange:{for:'Range',htmlCode:"<div class='BoxRange' ><input type='range' max='250' min='0' oninput='boxWalaRange(this)'><div  title='Use arrow key for minor change'>50</div>	</div>"},
     labelTextboxaajtak:{for:'Text',htmlCode:"<fieldset  class='labelTextboxaajtak'><label>'your Label'</label><input type='text'></fieldset>"},
-    containerCircleCheckboxgk:{for:'Checkbox',htmlCode:"<div class='containerCircleCheckboxgk'><input type='checkbox' id='circle'><label for='circle'></label></div>"},
+    containerCircleCheckboxgk:{for:'Radio',htmlCode:"<div class='containerCircleCheckboxgk'><input type='checkbox' id='circle'><label for='circle'></label></div>"},
     switchCheckboxgk:{for:'Checkbox',htmlCode:"<input class='switchCheckboxgk' type='checkbox'>"},
     singleLineButtominputboxgk:{for:'Text',htmlCode:"<div class='singleLineButtominputboxgk'><input type='text'  placeholder='Textbox'></div>"},
     outlineTextboxaajtak:{for:'Text',htmlCode:"<input type='textbox' placeholder='name' class='outlineTextboxaajtak'>"},
@@ -295,10 +295,12 @@ function replaceElement(a,b)
 {
     let len=a.children.length;
     let lastele;
-    alert(1);
-    if(len>1){lastele= a.children[1];}
+   
+    if(len>1){lastele= a.children[len-1];}
     a.innerHTML=b;
+   
     if(len>1){ a.appendChild(lastele);}
+   
 }
 
 function setStyle(classname){
@@ -307,13 +309,15 @@ function setStyle(classname){
     {
         if(inputObj[k].input==styleObjType)
             {
+                alert(1);
                 let objId=inputObj[k].id;
-                if(inputObj[k].input=='Range')
+                if(inputObj[k].input=='Radio')
                 {
+                   
                     rangeParent=document.getElementById(objId);
                     for(let n=0;n<rangeParent.children.length;n++)
                     {
-                        replaceElement(rangeParent.children[0],allStyleObj[classname].htmlCode);
+                        replaceElement(rangeParent.children[n],allStyleObj[classname].htmlCode);
                     }
                 }
                 else
