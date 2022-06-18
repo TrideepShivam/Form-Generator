@@ -291,11 +291,14 @@ const allStyleObj={
     circleTextboxgk:{for:'Text',htmlCode:"<input type='textbox' placeholder='name' class='circleTextboxgk'>"},
     roundedTextboxFavBorder:{for:'Text',htmlCode:"<input type='textbox' placeholder='name' class='roundedTextboxFavBorder'>"}
 };
-function replaceElement(a,b){
-    let removeable= document.getElementById(a);
-    let lastele= removeable.children[1];
-    removeable.innerHTML=b;
-    removeable.appendChild(lastele);
+function replaceElement(a,b)
+{
+    let len=a.children.length;
+    let lastele;
+    alert(1);
+    if(len>1){lastele= a.children[1];}
+    a.innerHTML=b;
+    if(len>1){ a.appendChild(lastele);}
 }
 
 function setStyle(classname){
@@ -305,7 +308,16 @@ function setStyle(classname){
         if(inputObj[k].input==styleObjType)
             {
                 let objId=inputObj[k].id;
-                replaceElement(objId,allStyleObj[classname].htmlCode);
+                if(inputObj[k].input=='Range')
+                {
+                    rangeParent=document.getElementById(objId);
+                    for(let n=0;n<rangeParent.children.length;n++)
+                    {
+                        replaceElement(rangeParent.children[0],allStyleObj[classname].htmlCode);
+                    }
+                }
+                else
+                replaceElement(document.getElementById(objId),allStyleObj[classname].htmlCode);
             }
     }
 }
