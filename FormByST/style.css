@@ -327,7 +327,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 #outputBody input {
     cursor: pointer;
-    margin:10px 0px 10px 0px;
+  
 }
 #outputBody .basicBoxForRadOpt input{
     margin: 0px;
