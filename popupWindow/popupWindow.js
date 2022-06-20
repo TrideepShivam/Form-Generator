@@ -51,14 +51,14 @@ function getAdditionalContent(btnType) {
                                <h3>&#10004;</h3>
                            </div>Numbers
                        </div>
-                       <div class="checkboxContainer">
-                           <div class="outerCheckboxaajtak" onclick="checkNextRadio(this,this.parentElement.nextElementSibling.children[0])">
+                       <div class="radioContainer">
+                           <div class="outerCheckboxaajtak" onclick="checkNextRadio(this)">
                                <input name="space" type="checkbox" >
                                <h3>&#10004;</h3>   
                            </div>spaces
                        </div>
-                       <div class="checkboxContainer">
-                           <div class="outerCheckboxaajtak" onclick="checkNextRadio(this,this.parentElement.previousElementSibling.children[0])">
+                       <div class="radioContainer">
+                           <div class="outerCheckboxaajtak" onclick="checkNextRadio(this)">
                                <input name="non_space" type="checkbox">
                                <h3>&#10004;</h3>
                            </div>Non-spaces
@@ -129,20 +129,23 @@ function createNext(ele){
     container.insertBefore(newEle,ele.nextElementSibling);
 }
 
-function checkNextRadio(currentContainer,nextContainer){
-    outerCheckboxGlow(currentContainer)
-    if(nextContainer.children[0].checked){
-        outerCheckboxGlow(nextContainer);
+function checkNextRadio(currentElement){
+    const radioList =document.querySelectorAll('.radioContainer input');
+    let rLength=radioList.length;
+    console.log(rLength);
+    for(i=0;i<rLength;i++){
+        let r= radioList[i];
+        if(r.checked){
+            console.log(r.checked);
+            outerCheckboxGlow(r.parentElement);
+        }
     }
+    outerCheckboxGlow(currentElement);
 }
 
 function closePopup(ele) {
     ele.parentElement.parentElement.parentElement.remove();
 }
-
-document.getElementById('cancelbtn').addEventListener('click',function(){
-    loading(true);
-});
 
 function loading(order){
     if(order){

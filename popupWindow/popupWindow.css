@@ -33,7 +33,7 @@
     flex-wrap:wrap;
 }
 .additionalContainer input{width:40%;}
-.additionalContainer .checkboxContainer{
+.additionalContainer .checkboxContainer,.additionalContainer .radioContainer{
     width:150px;
     display:flex;
     align-items:center;
