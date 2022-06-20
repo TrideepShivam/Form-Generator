@@ -300,7 +300,7 @@ function replaceElement(a,b)
     a.innerHTML=b;
    
     if(len>1){ a.appendChild(lastele);}
-   
+   return a;
 }
 
 function setStyle(classname){
@@ -317,7 +317,9 @@ function setStyle(classname){
                     rangeParent=document.getElementById(objId);
                     for(let n=0;n<rangeParent.children.length;n++)
                     {
-                        replaceElement(rangeParent.children[n],allStyleObj[classname].htmlCode);
+                       let finals= replaceElement(rangeParent.children[n],allStyleObj[classname].htmlCode);
+                       finals.querySelector("input").setAttribute('name',inputObj[k].main_label);
+                       finals.querySelector("input").setAttribute('type',inputObj[k].input);
                     }
                 }
                 else
