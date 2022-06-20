@@ -140,3 +140,18 @@ function closePopup(ele) {
     ele.parentElement.parentElement.parentElement.remove();
 }
 
+document.getElementById('cancelbtn').addEventListener('click',function(){
+    loading(true);
+});
+
+function loading(order){
+    if(order){
+        let main = document.createElement('div');
+        main.setAttribute('class', 'popupContainer');
+        document.body.appendChild(main);
+        main.innerHTML="<h1>loding...</h1>";
+    }else{
+        document.getElementsByClassName('popupContainer').remove();
+    }
+}
+
