@@ -4,6 +4,9 @@ body {
     overflow: hidden;
     font-family: var(--basicFont);
     background: #151515;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 #SelectThemeButton {
     width: 17%;
@@ -27,9 +30,9 @@ body {
 }
 #ThemeSection {
     position: absolute;
-    left: 200px;
+    left: 13vw;
     bottom: 100px;
-    width: 335px;
+    width: 21%;
     height: 0px;
     background: lightgray;
     display: flex;
@@ -37,9 +40,10 @@ body {
     /* justify-content: center; */
     align-items: flex-start;
     transition: height .2s;
-    overflow: hidden;
+    overflow: scroll;
+    overflow-x: hidden;
 }
-#closeMain{
+#closeMain {
     padding:10px;
     position:absolute;
     right:0px;
@@ -63,7 +67,7 @@ h1 {
     /* border:2px solid red; */
     /* justify-content: center; */
 }
-.ElementContainer{
+.ElementContainer {
     display:flex;
     gap: 12px;
     height: 40px;
@@ -77,30 +81,24 @@ h1 {
     margin-left: 45px;
     cursor: pointer;
 }
-.ElementContainer input[type=radio]:hover {
-   transform: scale(1.1);
-}
-.circleTextboxgk {
-    width: 190px;
-    padding: 5px 14px;
-}
+.ElementContainer input[type=radio]:hover { transform: scale(1.1); }
+.circleTextboxgk { width: 190px; padding: 5px 14px; }
 .singleLineButtominputboxgk {
     height: 10px;
     width: 205px;
     margin-top: -8px;
-
 }
-.singleLineButtominputboxgk input{
+.singleLineButtominputboxgk input {
     padding: 10px 6px;
     background-color: transparent;
-  border-bottom-color: rgb(58, 58, 58);
+    border-bottom-color: rgb(58, 58, 58);
 }
 .txtcontainer {
     height: auto;
     width: 210px;
     padding: 0px 0px 1px 4px;
 }
-.contactTxt{font-size: 18px; background-color: transparent;}
+.contactTxt { font-size: 18px; background-color: transparent; }
 .topname{ transform: scale(1.1) translate(5px,15px); }
 .labelTextboxaajtak {
     width: 205px;
@@ -113,8 +111,37 @@ h1 {
     border-top-width: 20px;
     margin: 0px;
 }
-.labelTextboxaajtak label {
-    width: 205px;
-    top: 18px;
-    left: 6px;  
+.labelTextboxaajtak label { width: 205px; top: 18px; left: 6px; }
+.switchCheckboxgk { height: 30px; width: 60px; }
+.switchCheckboxgk:before { width: 30px; height: 30px; }
+.switchCheckboxgk:checked:before { left: 30px; }
+.checkboxMiddleSection {
+    width:60px;
+    height:31px;
+    margin:0px 1px 0px 2px ;
 }
+.checkboxMiddleSection button {
+    height:96%;
+    width:50%;
+    margin: 0.5px 0px 0px 0px ;  
+}
+.checkboxSlider {
+    height:40px;
+    width:40px;
+    border-radius:50%;
+    margin:5px 0px 5px -5px;
+    transform:translatex(-6px);
+}
+.SelectTextBox input[type=radio] { margin-left: 35px ; }
+.popuprange div:first-child{ top:-35px; }
+.BoxRange { height:25px; width:198px; }
+.containerCircleCheckboxgk {
+    margin-left: 4px;
+    margin-bottom: 0px;    
+}
+.popuprange {
+    width:185px;
+    height:10px;
+    margin: 0px;
+}
+

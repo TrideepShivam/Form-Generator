@@ -1,9 +1,4 @@
-// Previous Code script -
-// function ThemeSection(themeform){
-//     let themebox=themeform.nextElementSibling;
-//     themebox.style.cssText="display:inline-block;";
-//     themeform.style.cssText="opacity:0;";
-// }
+
 function txtFocused(t){
 	if(t.value==""){	
 		text=t.previousElementSibling;

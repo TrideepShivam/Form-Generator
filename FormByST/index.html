@@ -40,13 +40,74 @@
 				<div id="historyPanel">
 					
 				</div>
-					<button class="commonbtn" id="themebtn">Theme</button>
+					<button class="commonbtn" id="themebtn" onclick="openThemePanel()">Theme</button>
 					<p>Addvance Edit</p>
 				</div>
 				<div id="okCancelDiv">
 					<button class="commonbtn" id="okbtn" onclick="setStyle('outerCheckboxaajtak')">Submit</button>
 					<button class="commonbtn" id="cancelbtn" onclick="loading(true)">Cancel</button>
 				</div>
+			
+				
+
+
+				<div id="ThemeSection">
+					<button id="closeMainss" onclick="this.parentElement.style.height='0%'">&#10060</button>
+					<h1>Textbox :</h1>
+					<div class="SelectTextBox">
+						<div class="ElementContainer">
+							<input type="radio" name="text" checked>
+							<input type="textbox" placeholder="name" class="circleTextboxgk">
+						</div>
+						<div class="ElementContainer">
+							<input type="radio" name="text">
+							<input type="textbox"  placeholder="name" class="outlineTextboxaajtak">
+						</div>
+						<div class="ElementContainer">
+							<input type="radio" name="text">
+							<div class="singleLineButtominputboxgk"><input type="text"  placeholder="Textbox"></div>
+						</div>
+						<div class="ElementContainer">
+							<input type="radio" name="text">
+							<fieldset class='txtcontainer'><legend class='topname'>your name</legend><input type='text' class='contactTxt' onfocusout='txtUnfocused(this)' onfocus='txtFocused(this)'></fieldset>
+						</div>
+						<div class="ElementContainer">
+							<input type="radio" name="text">
+							<fieldset  class="labelTextboxaajtak"><label>your name</label><input type="text"></fieldset>
+						</div>
+					</div>
+			
+					<h1>Checkbox :</h1>
+					<div class="SelectTextBox">
+						<div class="ElementContainer">
+							<input type="radio" name="checkbox" checked>
+							<input class="switchCheckboxgk" type="checkbox" checked>
+							<input type="radio" name="checkbox">
+							<div class="containerCircleCheckboxgk"><input type="checkbox" id="circle" checked><label for="circle"></label></div>
+						</div>
+						<div class="ElementContainer">
+							<input type="radio" name="checkbox">
+							<div class="checkboxMiddleSection" onclick="checkboxWithSliderStyle(this,'your_color')"><input type="checkbox" class="checkboxStyleOne" checked><button class="checkboxSlider"></button></div>
+							<input type="radio" name="checkbox">
+							<div class="outerCheckboxaajtak" onclick="outerCheckboxGlow(this)"><input type="checkbox" checked><h3>&#10004;</h3></div>
+						</div>
+					</div>
+			
+					<h1>Range :</h1>
+					<div class="SelectTextBox">
+						<div class="ElementContainer">
+							<input type="radio" name="range" checked>
+							<div class="popuprange"><div>50</div><input type="range" max="222" min="0" oninput="popuprangeinput(this,max)" checked><div></div></div>
+						</div>
+						<div class="ElementContainer">
+							<input type="radio" name="range">
+							<div class="BoxRange" ><input type="range" max="250" min="0" oninput="boxWalaRange(this)" checked><div  title="Use arrow key for minor change">50</div></div>
+						</div>
+					</div>
+				</div>
+				
+
+
 		</div>
 		<div id="outputBody">
 		</div>
