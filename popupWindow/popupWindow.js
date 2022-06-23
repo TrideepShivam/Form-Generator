@@ -152,7 +152,15 @@ function loading(order){
         let main = document.createElement('div');
         main.setAttribute('class', 'popupContainer');
         document.body.appendChild(main);
-        main.innerHTML="<h1>loding...</h1>";
+        main.style.cssText="flex-direction:column;z-index:11;";
+        main.innerHTML=`<div id='circleContainer'>
+                            <div class="circle" id="circle1"></div>
+                            <div class="circle" id="circle2"></div>
+                            <div class="circle" id="circle3"></div>
+                            <div class="circle" id="circle4"></div>
+                            <div class="circle" id="circle5"></div>
+                        </div>
+                        <h1 style='color:silver;'>Loading...</h1>`;
     }else{
         document.getElementsByClassName('popupContainer').remove();
     }
