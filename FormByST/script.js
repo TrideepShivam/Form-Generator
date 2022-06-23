@@ -383,5 +383,5 @@ function openThemePanel(){
 
 function chooseTheme(a){
     nextElements=a.nextElementSibling;
-    setStyle(nextElements.className);
+    setStyle(nextElements.className); 
 }
