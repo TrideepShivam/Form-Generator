@@ -151,6 +151,7 @@ function loading(order){
     if(order){
         let main = document.createElement('div');
         main.setAttribute('class', 'popupContainer');
+        main.setAttribute('id', 'loadingContainer');
         document.body.appendChild(main);
         main.style.cssText="flex-direction:column;z-index:11;";
         main.innerHTML=`<div id='circleContainer'>
@@ -160,9 +161,9 @@ function loading(order){
                             <div class="circle" id="circle4"></div>
                             <div class="circle" id="circle5"></div>
                         </div>
-                        <h1 style='color:silver;'>Loading...</h1>`;
+                        <h1 style='color:silver;' onclick='loading(false)'>Loading...</h1>`;
     }else{
-        document.getElementsByClassName('popupContainer').remove();
+        document.getElementById('loadingContainer').remove();
     }
 }
 
