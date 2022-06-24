@@ -255,6 +255,13 @@ function showInOutput(allDetail){
     }
     let dynamicElement= elementCreater(allDetail);
     dynamicElement.setAttribute('id',allDetail.id);
+    if(allStyleObj.currentStyle.count!=0)
+    {
+        if(allDetail.input!='Radio' && allDetail.input!='Object')
+        {let htmlSource=allStyleObj.currentStyle[allDetail.input];
+            dynamicElement=replaceElement(dynamicElement,htmlSource);
+        }
+    }
     outputDiv.appendChild(dynamicElement);
     return dynamicElement; /* return the current created ele so that we can add this ele to their detailed object */
 }
@@ -277,6 +284,9 @@ function intSelector(str){
 }
 
 const allStyleObj={
+    currentStyle:{
+        Text:'',Radio:'',Checkbox:'',Range:'',count:0
+    },
     txtcontainer:{for:'Text',htmlCode:"<fieldset class='txtcontainer'><legend class='topname'>[your text which will be displayed as placeholder]</legend><input type='text' class='contactTxt' onfocusout='txtUnfocused(this)' onfocus='txtFocused(this)'></fieldset>"},
     outerCheckboxaajtak:{for:'Radio',htmlCode:" <div class='outerCheckboxaajtak' onclick='outerCheckboxGlow(this)'><input type='checkbox'><h3>&#10004;</h3></div>"},
     checkboxMiddleSection:{for:'Checkbox',htmlCode:`<div class='checkboxMiddleSection' onclick='checkboxWithSliderStyle(this,'your_color')'><input type='checkbox' class='checkboxStyleOne'><button class='checkboxSlider'></button></div>`},
@@ -289,7 +299,12 @@ const allStyleObj={
     singleLineButtominputboxgk:{for:'Text',htmlCode:"<div class='singleLineButtominputboxgk'><input type='text'  placeholder='Textbox'></div>"},
     outlineTextboxaajtak:{for:'Text',htmlCode:"<input type='textbox' placeholder='name' class='outlineTextboxaajtak'>"},
     circleTextboxgk:{for:'Text',htmlCode:"<input type='textbox' placeholder='name' class='circleTextboxgk'>"},
-    roundedTextboxFavBorder:{for:'Text',htmlCode:"<input type='textbox' placeholder='name' class='roundedTextboxFavBorder'>"}
+    roundedTextboxFavBorder:{for:'Text',htmlCode:"<input type='textbox' placeholder='name' class='roundedTextboxFavBorder'>"},
+    changeCurrentStyle:function(appliedStyle){
+        this.currentStyle[this[appliedStyle].for]=this[appliedStyle].htmlCode;
+        this.currentStyle.count=1;
+        alert(allStyleObj.currentStyle.count);
+    }
 };
 function replaceElement(a,b)
 {
@@ -320,14 +335,21 @@ function setStyle(classname){
                        let finals= replaceElement(rangeParent.children[n],allStyleObj[classname].htmlCode);
                        finals.querySelector("input").setAttribute('name',inputObj[k].main_label);
                        finals.querySelector("input").setAttribute('type',inputObj[k].input);
+                       
                     }
                 }
                 else
                 replaceElement(document.getElementById(objId),allStyleObj[classname].htmlCode);
+                inputObj[k].classname=classname;
             }
     }
+    
+    allStyleObj.changeCurrentStyle(classname);
 }
+function wearAttribute(eleobj,ele){
 
+
+}
 
 /* ayush theme section js*/
 
